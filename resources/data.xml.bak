@@ -30,7 +30,7 @@
     <custom-block blocktag="custom-68" blocktype="NORMAL" code="(.say(&quot;Walking&quot;, &quot;_customBlock_AtMaxWalkingSpeed&quot;) : Bool)" desc="" global="false" gui="%0 At Max Walking Speed" id="68" message="AtMaxWalkingSpeed" name="AtMaxWalkingSpeed" oid="-1" return="boolean" shared="false" snippetID="6">
         <blank name="Self" order="0" type="actor"/>
     </custom-block>
-    <background atlasID="0" desc="" durations="100" dx="-0.0" dy="-0.0" height="0" id="164" name="BoxingRing" numframes="1" oid="-1" readable="false" repeats="false" resized="false" shared="false" width="0" xpf="1.0" ypf="1.0"/>
+    <background atlasID="0" desc="" durations="100" dx="-0.0" dy="-0.0" height="355" id="164" name="BoxingRing" numframes="1" oid="-1" readable="false" repeats="true" resized="false" shared="false" width="625" xpf="1.0" ypf="1.0"/>
     <sprite atlasID="1" default="0" defaultAnimation="0" desc="" id="24" name="Button" readable="false" shared="false">
         <anim across="1" down="1" durations="100" height="50" id="0" loop="false" name="Left" numframes="1" originx="25" originy="25" sync="false" version="1" width="50">
             <poly data="4,0,0,50,0,50,50,0,50" density="0.1" fric="0.2" gid="-1000" id="0" name="Left" rest="0.0" sensor="false"/>
