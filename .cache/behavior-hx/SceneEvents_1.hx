@@ -43,6 +43,7 @@ import box2D.common.math.B2Vec2;
 import box2D.dynamics.B2Body;
 import box2D.dynamics.B2Fixture;
 import box2D.dynamics.joints.B2Joint;
+import box2D.collision.shapes.B2Shape;
 
 import com.stencyl.graphics.shaders.BasicShader;
 import com.stencyl.graphics.shaders.GrayscaleShader;
@@ -61,33 +62,13 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class Design_2_2_AnimationManager extends ActorScript
+class SceneEvents_1 extends SceneScript
 {
-	public var _PlayingOneTime:Bool;
-	public var _CurrentCategory:String;
-	public var _DefaultRightAnimation:String;
-	public var _DefaultLeftAnimation:String;
-	public var _CategoryHierarchy:Array<Dynamic>;
-	public var _CurrentIndex:Bool;
-	public var _RequestedIndex:Bool;
 	
 	
-	public function new(dummy:Int, actor:Actor, dummy2:Engine)
+	public function new(dummy:Int, dummy2:Engine)
 	{
-		super(actor);
-		nameMap.set("Actor", "actor");
-		nameMap.set("Playing One Time?", "_PlayingOneTime");
-		_PlayingOneTime = false;
-		nameMap.set("Current Category", "_CurrentCategory");
-		_CurrentCategory = "";
-		nameMap.set("Default Right Animation", "_DefaultRightAnimation");
-		nameMap.set("Default Left Animation", "_DefaultLeftAnimation");
-		nameMap.set("Category Hierarchy", "_CategoryHierarchy");
-		_CategoryHierarchy = ["Ground Pounding", "Ducking", "Wall Sliding", "Falling", "Wall Jumping", "Air Jumping", "Jumping", "Running", "Walking"];
-		nameMap.set("Current Index", "_CurrentIndex");
-		_CurrentIndex = false;
-		nameMap.set("Requested Index", "_RequestedIndex");
-		_RequestedIndex = false;
+		super();
 		
 	}
 	

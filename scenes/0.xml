@@ -11,9 +11,6 @@
     <terrainRegions/>
     <actors>
         <actor a="0.0" aid="1" c="false" group="0" id="3" name="Player 1" order="0" sx="1.0" sy="1.0" x="60" y="188" z="0"/>
-        <actor a="0.0" aid="5" c="false" group="3" id="23" name="LeftButton 5" order="1" sx="1.0" sy="1.0" x="17" y="253" z="0"/>
-        <actor a="0.0" aid="6" c="false" group="3" id="78" name="RightButton 6" order="2" sx="1.0" sy="1.0" x="86" y="253" z="0"/>
-        <actor a="0.0" aid="7" c="false" group="3" id="76" name="ActionButton 7" order="0" sx="1.0" sy="1.0" x="414" y="253" z="2"/>
     </actors>
     <snippets/>
     <terrain>

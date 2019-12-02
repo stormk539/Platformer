@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <pack>
-    <actor adamp="0.0" ascale="true" atlasID="1" bodytype="0" continuous="false" desc="" eventsnippetid="42" fixedrot="true" fric="0.2" gid="3" id="76" ignoreg="true" inertia="1.0" ldamp="0.0" mass="1.0" name="ActionButton" oid="-1" pausable="true" physicsMode="1" rest="0.0" shared="false" sprite="77" static="true">
-        <snippets>
-            <s enabled="true" id="43">
-                <prop id="2147483647" list="0" val="thisactor"/>
-                <prop id="1" list="0" val="Action"/>
-                <prop id="2" list="0" val="ActionPress"/>
-                <prop id="3" list="0" val="up"/>
-                <prop id="5" list="0" val="true"/>
-                <prop id="6" list="0" val="false"/>
-                <prop id="8" list="0" val="false"/>
-                <prop id="9" list="0" val="Action"/>
-                <prop id="10" list="0" val=""/>
-                <prop id="11" list="0" val="false"/>
-                <prop id="12" list="0" val="false"/>
-                <prop id="13" list="0" val="true"/>
-            </s>
-        </snippets>
-    </actor>
     <custom-block blocktag="custom-15" blocktype="NORMAL" code="" desc="" global="false" gui="%0 At Max Walking Speed" id="15" message="AtMaxWalkingSpeed" name="AtMaxWalkingSpeed" oid="-1" return="boolean" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
     </custom-block>
@@ -31,22 +13,6 @@
         <blank name="Self" order="0" type="actor"/>
     </custom-block>
     <background atlasID="0" desc="" durations="100" dx="-0.0" dy="-0.0" height="355" id="164" name="BoxingRing" numframes="1" oid="-1" readable="false" repeats="true" resized="false" shared="false" width="625" xpf="1.0" ypf="1.0"/>
-    <sprite atlasID="1" default="0" defaultAnimation="0" desc="" id="24" name="Button" readable="false" shared="false">
-        <anim across="1" down="1" durations="100" height="50" id="0" loop="false" name="Left" numframes="1" originx="25" originy="25" sync="false" version="1" width="50">
-            <poly data="4,0,0,50,0,50,50,0,50" density="0.1" fric="0.2" gid="-1000" id="0" name="Left" rest="0.0" sensor="false"/>
-        </anim>
-        <anim across="1" down="1" durations="100" height="50" id="1" loop="false" name="LeftPress" numframes="1" originx="25" originy="25" sync="false" version="1" width="50">
-            <poly data="4,0,0,50,0,50,50,0,50" density="0.1" fric="0.2" gid="-1000" id="0" name="LeftPress" rest="0.0" sensor="false"/>
-        </anim>
-    </sprite>
-    <sprite atlasID="1" default="0" defaultAnimation="0" desc="" id="77" name="ButtonRight" readable="false" shared="false">
-        <anim across="1" down="1" durations="100" height="50" id="0" loop="false" name="Action" numframes="1" originx="25" originy="25" sync="false" version="1" width="50">
-            <poly data="4,0,0,50,0,50,50,0,50" density="0.1" fric="0.2" gid="-1000" id="0" name="Action" rest="0.0" sensor="false"/>
-        </anim>
-        <anim across="1" down="1" durations="100" height="50" id="1" loop="false" name="ActionPress" numframes="1" originx="25" originy="25" sync="false" version="1" width="50">
-            <poly data="4,0,0,50,0,50,50,0,50" density="0.1" fric="0.2" gid="-1000" id="0" name="ActionPress" rest="0.0" sensor="false"/>
-        </anim>
-    </sprite>
     <custom-block blocktag="custom-8" blocktype="NORMAL" code="" desc="" global="false" gui="Current Category Same As %1" id="8" message="CategorySameAs" name="CategorySameAs" oid="-1" return="boolean" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
         <blank name="CheckCategory" order="1" type="text"/>
@@ -94,6 +60,14 @@
     <custom-block blocktag="custom-148" blocktype="ACTION" code="" desc="Continues the current timer, without having to reset" global="false" gui="Continue current timer" id="148" message="Cnt" name="Cnt" oid="-1" return="void" shared="false" snippetID="-1"/>
     <custom-block blocktag="custom-152" blocktype="NORMAL" code="" desc="Returns true if the current timer is at 0" global="false" gui="Timer reached zero" id="152" message="Curr0" name="Curr0" oid="-1" return="boolean" shared="false" snippetID="-1"/>
     <custom-block blocktag="custom-149" blocktype="NORMAL" code="" desc="Returns the current time in seconds" global="false" gui="Current time" id="149" message="CurrTime" name="CurrTime" oid="-1" return="number" shared="false" snippetID="-1"/>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="51" fixedrot="false" fric="0.2" gid="3" id="167" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Enemy_01" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="168" static="false">
+        <snippets/>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="168" name="Enemy_01" readable="false" shared="false"/>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="52" fixedrot="false" fric="0.2" gid="3" id="169" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Enemy_02" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="170" static="false">
+        <snippets/>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="170" name="Enemy_02" readable="false" shared="false"/>
     <custom-block blocktag="custom-145" blocktype="NORMAL" code="" desc="Format a number to be displayed as a timer. Returns a text." global="true" gui="Format number %0 with %1 as minute-second separation and %2 as second-decimal separation" id="145" message="FormatTimer" name="FormatTimer" oid="-1" return="text" shared="false" snippetID="-1">
         <blank name="Time" order="0" type="number"/>
         <blank name="Minute-Seconds" order="1" type="text"/>
@@ -140,24 +114,6 @@
     <custom-block blocktag="custom-73" blocktype="NORMAL" code="(.say(&quot;Walking&quot;, &quot;_customBlock_GetWalkAccel&quot;) : Float)" desc="" global="false" gui="Get Walk Accel for %0" id="73" message="GetWalkAccel" name="GetWalkAccel" oid="-1" return="number" shared="false" snippetID="6">
         <blank name="Self" order="0" type="actor"/>
     </custom-block>
-    <actor adamp="0.0" ascale="true" atlasID="1" bodytype="0" continuous="false" desc="" eventsnippetid="44" fixedrot="false" fric="0.2" gid="3" id="23" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="LeftButton" oid="-1" pausable="true" physicsMode="1" rest="0.0" shared="false" sprite="24" static="true">
-        <snippets>
-            <s enabled="true" id="43">
-                <prop id="2147483647" list="0" val="thisactor"/>
-                <prop id="1" list="0" val="Left"/>
-                <prop id="2" list="0" val="LeftPress"/>
-                <prop id="3" list="0" val="left"/>
-                <prop id="5" list="0" val="true"/>
-                <prop id="6" list="0" val="false"/>
-                <prop id="8" list="0" val="false"/>
-                <prop id="9" list="0" val="Left"/>
-                <prop id="10" list="0" val=""/>
-                <prop id="11" list="0" val="false"/>
-                <prop id="12" list="0" val="false"/>
-                <prop id="13" list="0" val="true"/>
-            </s>
-        </snippets>
-    </actor>
     <custom-block blocktag="custom-13" blocktype="ACTION" code="" desc="" global="false" gui="Set Limit Speed for %0 to %1" id="13" message="LimitSpeed" name="LimitSpeed" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
         <blank name="Limit" order="1" type="boolean"/>
@@ -216,7 +172,7 @@
     <custom-block blocktag="custom-155" blocktype="ACTION" code="" desc="Modify the timer by the given number." global="false" gui="Modify Timer by %0" id="155" message="ModifyTime" name="ModifyTime" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="TimeModifier" order="0" type="number"/>
     </custom-block>
-    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="false" desc="" eventsnippetid="-1" fixedrot="true" fric="0.0" gid="0" id="3" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Player" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="4" static="false">
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="false" desc="" eventsnippetid="49" fixedrot="true" fric="0.0" gid="0" id="3" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Player" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="4" static="false">
         <snippets>
             <s enabled="true" id="2">
                 <prop id="2147483647" list="0" val="thisactor"/>
@@ -259,7 +215,7 @@
                 <prop id="8" list="0" val="Right"/>
                 <prop id="9" list="0" val="Left"/>
                 <prop id="10" list="0" val="false"/>
-                <prop id="11" list="0" val=""/>
+                <prop id="11" list="1" val=""/>
                 <prop id="12" list="0" val="Walking"/>
             </s>
             <s enabled="true" id="39">
@@ -278,7 +234,7 @@
                 <prop id="16" list="0" val="0"/>
                 <prop id="17" list="0" val="0"/>
                 <prop id="18" list="0" val="0.75"/>
-                <prop id="19" list="0" val="No Sound"/>
+                <prop id="19" list="0" val="-1"/>
                 <prop id="20" list="0" val="35"/>
                 <prop id="21" list="0" val="Jumping"/>
             </s>
@@ -323,16 +279,16 @@
                 <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="1" list="0" val="false"/>
                 <prop id="2" list="0" val="false"/>
-                <prop id="3" list="0" val=""/>
+                <prop id="3" list="1" val=""/>
             </s>
         </snippets>
     </actor>
     <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="4" name="Player" readable="false" shared="false">
-        <anim across="1" down="1" durations="100" height="36" id="0" loop="true" name="Right" numframes="1" originx="18" originy="18" sync="false" version="1" width="37">
+        <anim across="1" down="1" durations="100" height="36" id="0" loop="true" name="Right" numframes="1" originx="18" originy="18" sync="false" version="2" width="37">
             <poly data="4,0,0,37,0,37,36,0,36" density="0.1" fric="0.2" gid="-1000" id="0" name="StaticRight" rest="0.0" sensor="false"/>
         </anim>
-        <anim across="1" down="1" durations="100" height="36" id="1" loop="true" name="Left" numframes="1" originx="18" originy="18" sync="false" version="1" width="37">
-            <poly data="4,0,0,37,0,37,36,0,36" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 1" rest="0.0" sensor="false"/>
+        <anim across="2" down="1" durations="100,100" height="36" id="1" loop="true" name="Left" numframes="2" originx="18" originy="18" sync="false" version="2" width="74">
+            <poly data="4,0,0,37,0,37,36,0,36" density="0.1" fric="0.2" gid="-1000" id="1" name="Box" rest="0.0" sensor="false"/>
         </anim>
     </sprite>
     <custom-block blocktag="custom-9" blocktype="ACTION" code="" desc="" global="false" gui="Play %1 Once for %0" id="9" message="PlayOnce" name="PlayOnce" oid="-1" return="void" shared="false" snippetID="-1">
@@ -416,32 +372,10 @@
         <blank name="Prevent" order="1" type="boolean"/>
     </custom-block>
     <custom-block blocktag="custom-151" blocktype="ACTION" code="" desc="Pauses the countdown" global="false" gui="Pause timer" id="151" message="Pse" name="Pse" oid="-1" return="void" shared="false" snippetID="-1"/>
-    <actor adamp="0.0" ascale="true" atlasID="1" bodytype="0" continuous="false" desc="" eventsnippetid="45" fixedrot="false" fric="0.2" gid="3" id="78" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="RightButton" oid="-1" pausable="true" physicsMode="1" rest="0.0" shared="false" sprite="79" static="true">
-        <snippets>
-            <s enabled="true" id="43">
-                <prop id="2147483647" list="0" val="thisactor"/>
-                <prop id="1" list="0" val="Right"/>
-                <prop id="2" list="0" val="RightPress"/>
-                <prop id="3" list="0" val="right"/>
-                <prop id="5" list="0" val="true"/>
-                <prop id="6" list="0" val="false"/>
-                <prop id="8" list="0" val="false"/>
-                <prop id="9" list="0" val="Right"/>
-                <prop id="10" list="0" val=""/>
-                <prop id="11" list="0" val="false"/>
-                <prop id="12" list="0" val="false"/>
-                <prop id="13" list="0" val="true"/>
-            </s>
-        </snippets>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="50" fixedrot="false" fric="0.2" gid="3" id="165" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Punch_Char" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="166" static="false">
+        <snippets/>
     </actor>
-    <sprite atlasID="1" default="0" defaultAnimation="0" desc="" id="79" name="RightButton" readable="false" shared="false">
-        <anim across="1" down="1" durations="100" height="50" id="0" loop="false" name="Right" numframes="1" originx="25" originy="25" sync="false" version="1" width="50">
-            <poly data="4,0,0,50,0,50,50,0,50" density="0.1" fric="0.2" gid="-1000" id="0" name="Right" rest="0.0" sensor="false"/>
-        </anim>
-        <anim across="1" down="1" durations="100" height="50" id="1" loop="false" name="RightPress" numframes="1" originx="25" originy="25" sync="false" version="1" width="50">
-            <poly data="4,0,0,50,0,50,50,0,50" density="0.1" fric="0.2" gid="-1000" id="0" name="RightPress" rest="0.0" sensor="false"/>
-        </anim>
-    </sprite>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="166" name="Punch_Char" readable="false" shared="false"/>
     <custom-block blocktag="custom-146" blocktype="ACTION" code="" desc="" global="false" gui="set font for label %0 to %1" id="146" message="setLabelFont" name="setLabelFont" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
         <blank name="font" order="1" type="font"/>
