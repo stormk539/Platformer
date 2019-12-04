@@ -61,10 +61,11 @@
     <custom-block blocktag="custom-148" blocktype="ACTION" code="" desc="Continues the current timer, without having to reset" global="false" gui="Continue current timer" id="148" message="Cnt" name="Cnt" oid="-1" return="void" shared="false" snippetID="-1"/>
     <custom-block blocktag="custom-152" blocktype="NORMAL" code="" desc="Returns true if the current timer is at 0" global="false" gui="Timer reached zero" id="152" message="Curr0" name="Curr0" oid="-1" return="boolean" shared="false" snippetID="-1"/>
     <custom-block blocktag="custom-149" blocktype="NORMAL" code="" desc="Returns the current time in seconds" global="false" gui="Current time" id="149" message="CurrTime" name="CurrTime" oid="-1" return="number" shared="false" snippetID="-1"/>
-    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="51" fixedrot="false" fric="0.2" gid="9" id="167" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Enemy_01" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="168" static="false">
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="51" fixedrot="true" fric="0.2" gid="9" id="167" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Enemy_01" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="168" static="false">
         <snippets>
             <s enabled="true" id="55">
                 <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="3"/>
             </s>
         </snippets>
     </actor>
@@ -73,10 +74,11 @@
             <poly data="4,100,0,225,0,225,225,100,225" density="0.1" fric="0.2" gid="9" id="0" name="Animation 0" rest="0.0" sensor="false"/>
         </anim>
     </sprite>
-    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="52" fixedrot="false" fric="0.2" gid="9" id="169" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Enemy_02" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="170" static="false">
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="52" fixedrot="true" fric="0.2" gid="9" id="169" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Enemy_02" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="170" static="false">
         <snippets>
             <s enabled="true" id="55">
                 <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="3"/>
             </s>
         </snippets>
     </actor>
@@ -246,7 +248,7 @@
                 <prop id="11" list="1" val=""/>
                 <prop id="12" list="0" val="Walking"/>
             </s>
-            <s enabled="true" id="54">
+            <s enabled="false" id="54">
                 <prop id="2147483647" list="0" val="thisactor"/>
             </s>
             <s enabled="true" id="39">
@@ -319,8 +321,8 @@
             <poly data="4,150,0,290,0,290,225,150,225" density="0.1" fric="0.2" gid="-1000" id="1" name="Box" rest="0.0" sensor="false"/>
         </anim>
         <anim across="1" down="1" durations="100" height="225" id="2" loop="true" name="Punch" numframes="1" originx="200" originy="112" sync="false" version="2" width="400">
-            <poly data="4,150,0,290,0,290,225,150,225" density="0.1" fric="0.2" gid="-1000" id="0" name="Punch" rest="0.0" sensor="false"/>
-            <poly data="4,225,50,350,50,350,100,225,100" density="0.1" fric="0.2" gid="8" id="1" name="Box" rest="0.0" sensor="true"/>
+            <poly data="4,148,0,288,0,288,225,148,225" density="0.1" fric="0.2" gid="8" id="0" name="Punch" rest="0.0" sensor="false"/>
+            <poly data="4,225,49,350,49,350,99,225,99" density="0.1" fric="0.2" gid="8" id="1" name="Box" rest="0.0" sensor="false"/>
         </anim>
     </sprite>
     <custom-block blocktag="custom-9" blocktype="ACTION" code="" desc="" global="false" gui="Play %1 Once for %0" id="9" message="PlayOnce" name="PlayOnce" oid="-1" return="void" shared="false" snippetID="-1">

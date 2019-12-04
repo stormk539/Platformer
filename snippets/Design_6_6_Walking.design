@@ -212,15 +212,15 @@
                     <get-val-6-10 comment="false" id="0" x="0" y="0"/>
                 </if>
                 <if comment="false" x="26" y="214">
-                    <group eventID="-1" id="-1">
-                        <actor-set-prop comment="false" x="37" y="262">
+                    <group eventID="9" id="-1">
+                        <actor-set-prop comment="false" x="37" y="247">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="Facing Right?"/>
                             <true comment="false" id="2" x="0" y="0"/>
                         </actor-set-prop>
-                        <if comment="false" x="37" y="294">
-                            <group eventID="-1" id="-1">
-                                <custom-60 comment="false" x="48" y="332">
+                        <if comment="false" x="37" y="279">
+                            <group eventID="9" id="-1">
+                                <custom-60 comment="false" x="48" y="317">
                                     <ACTOR eid="this" id="0"/>
                                     <get-val-6-6 comment="false" id="1" x="0" y="0"/>
                                     <get-val-6-12 comment="false" id="2" x="0" y="0"/>
@@ -233,15 +233,15 @@
                                 </actor-get-prop>
                             </as-boolean>
                         </if>
-                        <if comment="false" x="37" y="376">
-                            <group eventID="-1" id="-1">
-                                <stop comment="false" x="48" y="409"/>
+                        <if comment="false" x="37" y="361">
+                            <group eventID="9" id="-1">
+                                <stop comment="false" x="48" y="394"/>
                             </group>
                             <custom-68 comment="false" id="0" x="0" y="0">
                                 <ACTOR eid="this" id="0"/>
                             </custom-68>
                         </if>
-                        <push-shove comment="false" x="37" y="441">
+                        <push-shove comment="false" x="37" y="426">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="0"/>
                             <int id="2" val="1"/>
@@ -249,29 +249,20 @@
                             <get-val-6-3 comment="false" id="4" x="0" y="0"/>
                         </push-shove>
                     </group>
-                    <and comment="false" id="0" x="0" y="0">
-                        <keystate comment="false" id="0" x="0" y="0">
-                            <int id="0" val="0"/>
-                            <get-val-6-1 comment="false" id="1" x="0" y="0"/>
-                        </keystate>
-                        <not comment="false" id="1" x="0" y="0">
-                            <keystate comment="false" id="0" x="0" y="0">
-                                <int id="0" val="0"/>
-                                <get-val-6-2 comment="false" id="1" x="0" y="0"/>
-                            </keystate>
-                        </not>
-                    </and>
+                    <mousestate comment="false" id="0" x="0" y="0">
+                        <int id="0" val="0"/>
+                    </mousestate>
                 </if>
-                <if comment="false" x="26" y="485">
-                    <group eventID="-1" id="-1">
-                        <actor-set-prop comment="false" x="37" y="533">
+                <if comment="false" x="26" y="470">
+                    <group eventID="9" id="-1">
+                        <actor-set-prop comment="false" x="37" y="518">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="Facing Right?"/>
                             <false comment="false" id="2" x="0" y="0"/>
                         </actor-set-prop>
-                        <if comment="false" x="37" y="565">
-                            <group eventID="-1" id="-1">
-                                <custom-60 comment="false" x="48" y="603">
+                        <if comment="false" x="37" y="550">
+                            <group eventID="9" id="-1">
+                                <custom-60 comment="false" x="48" y="588">
                                     <ACTOR eid="this" id="0"/>
                                     <get-val-6-7 comment="false" id="1" x="0" y="0"/>
                                     <get-val-6-12 comment="false" id="2" x="0" y="0"/>
@@ -284,15 +275,15 @@
                                 </actor-get-prop>
                             </as-boolean>
                         </if>
-                        <if comment="false" x="37" y="647">
-                            <group eventID="-1" id="-1">
-                                <stop comment="false" x="48" y="680"/>
+                        <if comment="false" x="37" y="632">
+                            <group eventID="9" id="-1">
+                                <stop comment="false" x="48" y="665"/>
                             </group>
                             <custom-68 comment="false" id="0" x="0" y="0">
                                 <ACTOR eid="this" id="0"/>
                             </custom-68>
                         </if>
-                        <push-shove comment="false" x="37" y="712">
+                        <push-shove comment="false" x="37" y="697">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="0"/>
                             <int id="2" val="-1"/>
@@ -313,13 +304,13 @@
                         </not>
                     </and>
                 </if>
-                <if comment="false" x="26" y="756">
-                    <group eventID="-1" id="-1">
-                        <if comment="false" x="37" y="804">
-                            <group eventID="-1" id="-1">
-                                <if comment="false" x="48" y="842">
-                                    <group eventID="-1" id="-1">
-                                        <custom-60 comment="false" x="59" y="880">
+                <if comment="false" x="26" y="741">
+                    <group eventID="9" id="-1">
+                        <if comment="false" x="37" y="789">
+                            <group eventID="9" id="-1">
+                                <if comment="false" x="48" y="827">
+                                    <group eventID="9" id="-1">
+                                        <custom-60 comment="false" x="59" y="865">
                                             <ACTOR eid="this" id="0"/>
                                             <get-val-6-8 comment="false" id="1" x="0" y="0"/>
                                             <get-val-6-12 comment="false" id="2" x="0" y="0"/>
@@ -332,9 +323,9 @@
                                         </actor-get-prop>
                                     </as-boolean>
                                 </if>
-                                <else comment="false" x="48" y="924">
-                                    <group eventID="-1" id="-1">
-                                        <custom-60 comment="false" x="59" y="944">
+                                <else comment="false" x="48" y="909">
+                                    <group eventID="9" id="-1">
+                                        <custom-60 comment="false" x="59" y="929">
                                             <ACTOR eid="this" id="0"/>
                                             <get-val-6-9 comment="false" id="1" x="0" y="0"/>
                                             <get-val-6-12 comment="false" id="2" x="0" y="0"/>
@@ -368,7 +359,20 @@
             </group>
         </step>
     </group>
-    <group eventID="9" id="-1"/>
+    <group eventID="9" id="-1">
+        <and comment="false" x="624" y="133">
+            <keystate comment="false" id="0" x="0" y="0">
+                <int id="0" val="0"/>
+                <get-val-6-1 comment="false" id="1" x="0" y="0"/>
+            </keystate>
+            <not comment="false" id="1" x="0" y="0">
+                <keystate comment="false" id="0" x="0" y="0">
+                    <int id="0" val="0"/>
+                    <get-val-6-2 comment="false" id="1" x="0" y="0"/>
+                </keystate>
+            </not>
+        </and>
+    </group>
     <group eventID="10" id="0">
         <init comment="false" x="15" y="15">
             <group eventID="-1" id="-1">
@@ -402,4 +406,11 @@
         </init>
     </group>
     <group eventID="10" id="-1"/>
+    <group eventID="11" id="0">
+        <event-mouse-press-release comment="false" x="15" y="15">
+            <group eventID="11" id="-1"/>
+            <int id="0" val="0"/>
+        </event-mouse-press-release>
+    </group>
+    <group eventID="11" id="-1"/>
 </groups>

@@ -64,11 +64,14 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 class SceneEvents_0 extends SceneScript
 {
+	public var _IsPunching:Bool;
 	
 	
 	public function new(dummy:Int, dummy2:Engine)
 	{
 		super();
+		nameMap.set("IsPunching", "_IsPunching");
+		_IsPunching = false;
 		
 	}
 	
