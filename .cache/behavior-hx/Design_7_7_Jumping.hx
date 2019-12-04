@@ -113,6 +113,106 @@ class Design_7_7_Jumping extends ActorScript
 	override public function init()
 	{
 		
+		/* ======================== When Creating ========================= */
+		/* Inputs: ---------------------- */
+		/* "On Ground?" -- <Boolean> Actor Level Attribute, from "On Ground" Behavior (required) */
+		/* "Facing Right?" -- <Boolean> Actor Level Attribute, from "Walking" Behavior (required) */
+		/* Outputs: --------------------- */
+		/* "Is Jumping?" -- <Boolean> Actor Level Attribute */
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				/* If we're on the ground, we're not jumping */
+				if(asBoolean(actor.getActorValue("On Ground?")))
+				{
+					actor.setActorValue("Is Jumping?", false);
+					actor.say("Animation Manager", "_customBlock_ClearAnimCat", [_AnimationCategory]);
+					if(_KeyReleased)
+					{
+						_CanJump = true;
+					}
+				}
+				/* Check for the jump key press, but also allow a bit of leeway for smoother jumping */
+				if(isKeyPressed(_JumpKey))
+				{
+					if(!(asBoolean(actor.getActorValue("On Ground?"))))
+					{
+						runLater(1000 * 0.15, function(timeTask:TimedTask):Void
+						{
+							if(actor.isAlive())
+							{
+								if(!(asBoolean(actor.getActorValue("On Ground?"))))
+								{
+									_KeyReleased = false;
+								}
+							}
+						}, actor);
+					}
+				}
+				/* Detect the release of the jump key */
+				if((!(_KeyReleased) && !(isKeyDown(_JumpKey))))
+				{
+					_KeyReleased = true;
+					/* If we're still in the middle of jumping, slow down our upward ascent */
+					if((asBoolean(actor.getActorValue("Is Jumping?")) && (actor.getY() < _oldY)))
+					{
+						actor.setYVelocity((actor.getYVelocity() * _JumpingSlowdown));
+					}
+				}
+				/* Detect the jump key press, and initiate the jump */
+				if((isKeyDown(_JumpKey) && (_CanJump && (_KeyReleased && asBoolean(actor.getActorValue("On Ground?"))))))
+				{
+					playSound(_JumpSound);
+					_ElapsedJumpTime = 0;
+					actor.setYVelocity(-(_JumpForce));
+					_CanJump = false;
+					_KeyReleased = false;
+					/* Add a small delay before setting the jumping flag, since another collision can occur before the Actor */
+					/* gets off the ground, and this would just reset the flag to FALSE. */
+					runLater(1000 * 0.075, function(timeTask:TimedTask):Void
+					{
+						if(actor.isAlive())
+						{
+							actor.setActorValue("Is Jumping?", true);
+						}
+					}, actor);
+					return;
+				}
+				/* If we are currently jumping, set the jumping animation */
+				if(asBoolean(actor.getActorValue("Is Jumping?")))
+				{
+					_ElapsedJumpTime += 1;
+					if(asBoolean(actor.getActorValue("Facing Right?")))
+					{
+						if((actor.getY() < _oldY))
+						{
+							actor.say("Animation Manager", "_customBlock_LoopAnim", [_JumpRightAnimation, _AnimationCategory]);
+						}
+					}
+					else
+					{
+						if((actor.getY() < _oldY))
+						{
+							actor.say("Animation Manager", "_customBlock_LoopAnim", [_JumpLeftAnimation, _AnimationCategory]);
+						}
+					}
+					/* Check to see if the amount of time we've been jumping for has exceeded the max jumping time */
+					/* if not, keep setting the jump velocity */
+					if((_ElapsedJumpTime <= ((_MaxJumpTime * 1000) / getStepSize())))
+					{
+						if((isKeyDown(_JumpKey) && (!(_KeyReleased) && (actor.getY() < _oldY))))
+						{
+							actor.setYVelocity(-(_JumpForce));
+						}
+					}
+				}
+				_oldY = actor.getY();
+			}
+		});
+		
 	}
 	
 	override public function forwardMessage(msg:String)

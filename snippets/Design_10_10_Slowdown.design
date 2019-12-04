@@ -1,35 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <groups>
-    <group id="0">
-        <init comment="false" x="15" y="15">
-            <group id="-1">
-                <comment-short comment="false" x="26" y="40">
-                    <int id="0" val="Inputs: ----------------------"/>
-                </comment-short>
-                <comment-short comment="false" x="26" y="60">
-                    <int id="0" val="&amp;quot;On Ground?&amp;quot; -- &amp;lt;Boolean&amp;gt; Actor Level Attribute, from &amp;quot;On Ground&amp;quot; Behavior"/>
-                </comment-short>
-                <comment-short comment="false" x="26" y="80">
-                    <int id="0" val="&amp;quot;Is Ducking?&amp;quot; -- &amp;lt;Boolean&amp;gt; Actor Level Attribute, from &amp;quot;Ducking&amp;quot; Behavior"/>
-                </comment-short>
-                <comment-short comment="false" x="26" y="100">
-                    <int id="0" val="&amp;quot;Is Slope Sliding?&amp;quot; -- &amp;lt;Boolean&amp;gt; Actor Level Attribute, from &amp;quot;Slope Detection&amp;quot; Behavior"/>
-                </comment-short>
-                <comment-short comment="false" x="26" y="120">
-                    <int id="0" val="Outputs: ---------------------"/>
-                </comment-short>
-                <comment-short comment="false" x="26" y="140">
-                    <int id="0" val="None"/>
-                </comment-short>
-            </group>
-        </init>
-    </group>
-    <group id="1">
-        <step comment="false" x="15" y="188">
-            <group id="-1">
-                <if comment="false" x="26" y="213">
-                    <group id="-1">
-                        <stop comment="false" x="37" y="251"/>
+    <group eventID="1" id="0">
+        <step comment="false" x="15" y="15">
+            <group eventID="-1" id="-1">
+                <if comment="false" x="26" y="40">
+                    <group eventID="-1" id="-1">
+                        <stop comment="false" x="37" y="78"/>
                     </group>
                     <as-boolean comment="false" id="0" x="0" y="0">
                         <actor-get-prop comment="false" id="0" x="0" y="0">
@@ -38,9 +14,9 @@
                         </actor-get-prop>
                     </as-boolean>
                 </if>
-                <if comment="false" x="26" y="283">
-                    <group id="-1">
-                        <set-dxy comment="false" x="37" y="326">
+                <if comment="false" x="26" y="110">
+                    <group eventID="-1" id="-1">
+                        <set-dxy comment="false" x="37" y="153">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="0"/>
                             <times comment="false" id="2" x="0" y="0">
@@ -51,7 +27,7 @@
                                 <get-val-10-5 comment="false" id="1" x="0" y="0"/>
                             </times>
                         </set-dxy>
-                        <stop comment="false" x="37" y="371"/>
+                        <stop comment="false" x="37" y="198"/>
                     </group>
                     <and comment="false" id="0" x="0" y="0">
                         <as-boolean comment="false" id="0" x="0" y="0">
@@ -68,11 +44,11 @@
                         </as-boolean>
                     </and>
                 </if>
-                <if comment="false" x="26" y="403">
-                    <group id="-1">
-                        <if comment="false" x="37" y="456">
-                            <group id="-1">
-                                <set-dxy comment="false" x="48" y="494">
+                <if comment="false" x="26" y="230">
+                    <group eventID="-1" id="-1">
+                        <if comment="false" x="37" y="283">
+                            <group eventID="-1" id="-1">
+                                <set-dxy comment="false" x="48" y="321">
                                     <ACTOR eid="this" id="0"/>
                                     <int id="1" val="0"/>
                                     <times comment="false" id="2" x="0" y="0">
@@ -91,9 +67,9 @@
                                 </actor-get-prop>
                             </as-boolean>
                         </if>
-                        <else comment="false" x="37" y="551">
-                            <group id="-1">
-                                <set-dxy comment="false" x="48" y="571">
+                        <else comment="false" x="37" y="378">
+                            <group eventID="-1" id="-1">
+                                <set-dxy comment="false" x="48" y="398">
                                     <ACTOR eid="this" id="0"/>
                                     <int id="1" val="0"/>
                                     <times comment="false" id="2" x="0" y="0">
@@ -132,11 +108,11 @@
                         </not>
                     </and>
                 </if>
-                <else comment="false" x="26" y="640">
-                    <group id="-1">
-                        <if comment="false" x="37" y="660">
-                            <group id="-1">
-                                <custom-69 comment="false" x="48" y="698">
+                <else comment="false" x="26" y="467">
+                    <group eventID="-1" id="-1">
+                        <if comment="false" x="37" y="487">
+                            <group eventID="-1" id="-1">
+                                <custom-69 comment="false" x="48" y="525">
                                     <ACTOR eid="this" id="0"/>
                                     <get-val-10-7 comment="false" id="1" x="0" y="0"/>
                                 </custom-69>
@@ -148,9 +124,9 @@
                                 </actor-get-prop>
                             </as-boolean>
                         </if>
-                        <else comment="false" x="37" y="742">
-                            <group id="-1">
-                                <set-dxy comment="false" x="48" y="762">
+                        <else comment="false" x="37" y="569">
+                            <group eventID="-1" id="-1">
+                                <set-dxy comment="false" x="48" y="589">
                                     <ACTOR eid="this" id="0"/>
                                     <int id="1" val="0"/>
                                     <times comment="false" id="2" x="0" y="0">
@@ -168,15 +144,30 @@
             </group>
         </step>
     </group>
-    <group id="2">
-        <collide comment="false" x="15" y="859">
-            <group id="-1"/>
-        </collide>
+    <group eventID="1" id="-1"/>
+    <group eventID="2" id="0">
+        <init comment="false" x="15" y="15">
+            <group eventID="-1" id="-1">
+                <comment-short comment="false" x="26" y="40">
+                    <int id="0" val="Inputs: ----------------------"/>
+                </comment-short>
+                <comment-short comment="false" x="26" y="60">
+                    <int id="0" val="&amp;quot;On Ground?&amp;quot; -- &amp;lt;Boolean&amp;gt; Actor Level Attribute, from &amp;quot;On Ground&amp;quot; Behavior"/>
+                </comment-short>
+                <comment-short comment="false" x="26" y="80">
+                    <int id="0" val="&amp;quot;Is Ducking?&amp;quot; -- &amp;lt;Boolean&amp;gt; Actor Level Attribute, from &amp;quot;Ducking&amp;quot; Behavior"/>
+                </comment-short>
+                <comment-short comment="false" x="26" y="100">
+                    <int id="0" val="&amp;quot;Is Slope Sliding?&amp;quot; -- &amp;lt;Boolean&amp;gt; Actor Level Attribute, from &amp;quot;Slope Detection&amp;quot; Behavior"/>
+                </comment-short>
+                <comment-short comment="false" x="26" y="120">
+                    <int id="0" val="Outputs: ---------------------"/>
+                </comment-short>
+                <comment-short comment="false" x="26" y="140">
+                    <int id="0" val="None"/>
+                </comment-short>
+            </group>
+        </init>
     </group>
-    <group id="3">
-        <draw comment="false" x="15" y="932">
-            <group id="-1"/>
-        </draw>
-    </group>
-    <group id="-1"/>
+    <group eventID="2" id="-1"/>
 </groups>

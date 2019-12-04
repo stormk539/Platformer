@@ -12,6 +12,7 @@
     <custom-block blocktag="custom-68" blocktype="NORMAL" code="(.say(&quot;Walking&quot;, &quot;_customBlock_AtMaxWalkingSpeed&quot;) : Bool)" desc="" global="false" gui="%0 At Max Walking Speed" id="68" message="AtMaxWalkingSpeed" name="AtMaxWalkingSpeed" oid="-1" return="boolean" shared="false" snippetID="6">
         <blank name="Self" order="0" type="actor"/>
     </custom-block>
+    <background atlasID="0" desc="" durations="100" dx="-0.0" dy="-0.0" height="255" id="171" name="BoxingBackground" numframes="1" oid="-1" readable="false" repeats="true" resized="false" shared="false" width="512" xpf="1.0" ypf="1.0"/>
     <background atlasID="0" desc="" durations="100" dx="-0.0" dy="-0.0" height="355" id="164" name="BoxingRing" numframes="1" oid="-1" readable="false" repeats="true" resized="false" shared="false" width="625" xpf="1.0" ypf="1.0"/>
     <custom-block blocktag="custom-8" blocktype="NORMAL" code="" desc="" global="false" gui="Current Category Same As %1" id="8" message="CategorySameAs" name="CategorySameAs" oid="-1" return="boolean" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
@@ -60,6 +61,38 @@
     <custom-block blocktag="custom-148" blocktype="ACTION" code="" desc="Continues the current timer, without having to reset" global="false" gui="Continue current timer" id="148" message="Cnt" name="Cnt" oid="-1" return="void" shared="false" snippetID="-1"/>
     <custom-block blocktag="custom-152" blocktype="NORMAL" code="" desc="Returns true if the current timer is at 0" global="false" gui="Timer reached zero" id="152" message="Curr0" name="Curr0" oid="-1" return="boolean" shared="false" snippetID="-1"/>
     <custom-block blocktag="custom-149" blocktype="NORMAL" code="" desc="Returns the current time in seconds" global="false" gui="Current time" id="149" message="CurrTime" name="CurrTime" oid="-1" return="number" shared="false" snippetID="-1"/>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="51" fixedrot="false" fric="0.2" gid="9" id="167" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Enemy_01" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="168" static="false">
+        <snippets>
+            <s enabled="true" id="55">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="168" name="Enemy_01" readable="false" shared="false">
+        <anim across="2" down="1" durations="100,100" height="225" id="0" loop="true" name="Animation 0" numframes="2" originx="200" originy="112" sync="false" version="2" width="800">
+            <poly data="4,100,0,225,0,225,225,100,225" density="0.1" fric="0.2" gid="9" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="52" fixedrot="false" fric="0.2" gid="9" id="169" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Enemy_02" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="170" static="false">
+        <snippets>
+            <s enabled="true" id="55">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="170" name="Enemy_02" readable="false" shared="false">
+        <anim across="2" down="1" durations="100,100" height="225" id="0" loop="true" name="Animation 0" numframes="2" originx="200" originy="112" sync="false" version="2" width="800">
+            <poly data="4,100,0,225,0,225,225,100,225" density="0.1" fric="0.2" gid="9" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="57" fixedrot="false" fric="0.2" gid="3" id="174" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Exit_B" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="175" static="false">
+        <snippets/>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="175" name="Exit_B" readable="false" shared="false">
+        <anim across="1" down="1" durations="100" height="0" id="0" loop="true" name="Animation 0" numframes="1" originx="66" originy="37" sync="false" version="2" width="0">
+            <poly data="4,0,0,133,0,133,75,0,75" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
     <custom-block blocktag="custom-145" blocktype="NORMAL" code="" desc="Format a number to be displayed as a timer. Returns a text." global="true" gui="Format number %0 with %1 as minute-second separation and %2 as second-decimal separation" id="145" message="FormatTimer" name="FormatTimer" oid="-1" return="text" shared="false" snippetID="-1">
         <blank name="Time" order="0" type="number"/>
         <blank name="Minute-Seconds" order="1" type="text"/>
@@ -170,7 +203,7 @@
                 <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="1" list="0" val="false"/>
                 <prop id="2" list="0" val=""/>
-                <prop id="3" list="0" val="Right"/>
+                <prop id="3" list="0" val=""/>
                 <prop id="4" list="0" val="Left"/>
                 <prop id="5" list="1" val="">
                     <text order="0" value="Ground Pounding"/>
@@ -190,10 +223,13 @@
                 <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="1" list="0" val="0"/>
                 <prop id="2" list="0" val="false"/>
-                <prop id="3" list="0" val="Right"/>
+                <prop id="3" list="0" val=""/>
                 <prop id="4" list="0" val="Left"/>
                 <prop id="5" list="0" val="0"/>
                 <prop id="6" list="0" val="Falling"/>
+            </s>
+            <s enabled="true" id="53">
+                <prop id="2147483647" list="0" val="thisactor"/>
             </s>
             <s enabled="true" id="6">
                 <prop id="2147483647" list="0" val="thisactor"/>
@@ -202,13 +238,16 @@
                 <prop id="3" list="0" val="300"/>
                 <prop id="4" list="0" val="22"/>
                 <prop id="5" list="0" val="true"/>
-                <prop id="6" list="0" val="Right"/>
+                <prop id="6" list="0" val=""/>
                 <prop id="7" list="0" val="Left"/>
-                <prop id="8" list="0" val="Right"/>
+                <prop id="8" list="0" val=""/>
                 <prop id="9" list="0" val="Left"/>
                 <prop id="10" list="0" val="false"/>
                 <prop id="11" list="1" val=""/>
                 <prop id="12" list="0" val="Walking"/>
+            </s>
+            <s enabled="true" id="54">
+                <prop id="2147483647" list="0" val="thisactor"/>
             </s>
             <s enabled="true" id="39">
                 <prop id="2147483647" list="0" val="thisactor"/>
@@ -219,21 +258,21 @@
                 <prop id="2" list="0" val="false"/>
                 <prop id="3" list="0" val="up"/>
                 <prop id="8" list="0" val="0.075"/>
-                <prop id="12" list="0" val="Right"/>
+                <prop id="12" list="0" val=""/>
                 <prop id="13" list="0" val="Left"/>
                 <prop id="14" list="0" val="false"/>
                 <prop id="15" list="0" val="0"/>
                 <prop id="16" list="0" val="0"/>
                 <prop id="17" list="0" val="0"/>
                 <prop id="18" list="0" val="0.75"/>
-                <prop id="19" list="0" val="-1"/>
+                <prop id="19" list="0" val="No Sound"/>
                 <prop id="20" list="0" val="35"/>
                 <prop id="21" list="0" val="Jumping"/>
             </s>
             <s enabled="true" id="8">
                 <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="1" list="0" val="false"/>
-                <prop id="2" list="0" val="No Control"/>
+                <prop id="2" list="0" val="right"/>
                 <prop id="3" list="0" val="true"/>
                 <prop id="4" list="0" val="0.0"/>
                 <prop id="5" list="0" val="0.0"/>
@@ -242,15 +281,15 @@
                 <prop id="8" list="0" val="100.0"/>
                 <prop id="9" list="0" val="25.0"/>
                 <prop id="10" list="0" val="35.0"/>
-                <prop id="11" list="0" val="No Control"/>
-                <prop id="12" list="0" val="No Control"/>
+                <prop id="11" list="0" val="right"/>
+                <prop id="12" list="0" val="left"/>
                 <prop id="13" list="0" val="0.4"/>
                 <prop id="14" list="0" val="true"/>
-                <prop id="15" list="0" val="Right"/>
+                <prop id="15" list="0" val=""/>
                 <prop id="16" list="0" val="Left"/>
-                <prop id="17" list="0" val="Right"/>
+                <prop id="17" list="0" val=""/>
                 <prop id="18" list="0" val="Left"/>
-                <prop id="19" list="0" val="Right"/>
+                <prop id="19" list="0" val=""/>
                 <prop id="20" list="0" val="Left"/>
                 <prop id="21" list="0" val="Running"/>
             </s>
@@ -275,12 +314,13 @@
             </s>
         </snippets>
     </actor>
-    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="4" name="Player" readable="false" shared="false">
-        <anim across="1" down="1" durations="100" height="36" id="0" loop="true" name="Right" numframes="1" originx="18" originy="18" sync="false" version="2" width="37">
-            <poly data="4,0,0,37,0,37,36,0,36" density="0.1" fric="0.2" gid="-1000" id="0" name="StaticRight" rest="0.0" sensor="false"/>
+    <sprite atlasID="0" default="1" defaultAnimation="1" desc="" id="4" name="Player" readable="false" shared="false">
+        <anim across="1" down="1" durations="100" height="225" id="1" loop="true" name="Left" numframes="1" originx="200" originy="112" sync="false" version="2" width="400">
+            <poly data="4,150,0,290,0,290,225,150,225" density="0.1" fric="0.2" gid="-1000" id="1" name="Box" rest="0.0" sensor="false"/>
         </anim>
-        <anim across="2" down="1" durations="100,100" height="36" id="1" loop="true" name="Left" numframes="2" originx="18" originy="18" sync="false" version="2" width="74">
-            <poly data="4,0,0,37,0,37,36,0,36" density="0.1" fric="0.2" gid="-1000" id="1" name="Box" rest="0.0" sensor="false"/>
+        <anim across="1" down="1" durations="100" height="225" id="2" loop="true" name="Punch" numframes="1" originx="200" originy="112" sync="false" version="2" width="400">
+            <poly data="4,150,0,290,0,290,225,150,225" density="0.1" fric="0.2" gid="-1000" id="0" name="Punch" rest="0.0" sensor="false"/>
+            <poly data="4,225,50,350,50,350,100,225,100" density="0.1" fric="0.2" gid="8" id="1" name="Box" rest="0.0" sensor="true"/>
         </anim>
     </sprite>
     <custom-block blocktag="custom-9" blocktype="ACTION" code="" desc="" global="false" gui="Play %1 Once for %0" id="9" message="PlayOnce" name="PlayOnce" oid="-1" return="void" shared="false" snippetID="-1">
@@ -400,6 +440,14 @@
         <blank name="Self" order="0" type="actor"/>
         <blank name="Rate" order="1" type="number"/>
     </custom-block>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="56" fixedrot="false" fric="0.2" gid="3" id="172" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Start_B" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="173" static="false">
+        <snippets/>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="173" name="Start_B" readable="false" shared="false">
+        <anim across="1" down="1" durations="100" height="75" id="0" loop="true" name="Animation 0" numframes="1" originx="66" originy="37" sync="false" version="2" width="133">
+            <poly data="4,0,0,133,0,133,75,0,75" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
     <custom-block blocktag="custom-150" blocktype="ACTION" code="" desc="Starts a timer with a certain value" global="false" gui="Start timer with %0 seconds" id="150" message="Strt" name="Strt" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="Seconds" order="0" type="number"/>
     </custom-block>

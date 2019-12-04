@@ -69,6 +69,24 @@ class Design_4_4_Falling extends ActorScript
 	public var _FallLeftAnimation:String;
 	public var _GroundY:Float;
 	public var _AnimationCategory:String;
+	public function _customEvent_CheckFalling():Void
+	{
+		if((actor.getY() <= _OldY))
+		{
+			_CanFall = false;
+			return;
+		}
+		if(asBoolean(actor.getActorValue("Is Wall Sliding?")))
+		{
+			_CanFall = false;
+			return;
+		}
+		if((!(_CanFall) && (Math.abs((_GroundY - actor.getY())) <= 3)))
+		{
+			return;
+		}
+		_CanFall = true;
+	}
 	
 	
 	public function new(dummy:Int, actor:Actor, dummy2:Engine)
@@ -90,6 +108,54 @@ class Design_4_4_Falling extends ActorScript
 	
 	override public function init()
 	{
+		
+		/* ======================== When Creating ========================= */
+		/* Inputs: */
+		/* "Facing Right?" -- <Boolean> Actor Level Attribute, from "Walking" Behavior (required) */
+		/* Outputs: */
+		/* "Is Falling?" -- <Boolean> Actor Level Attribute */
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				if(!(asBoolean(actor.getActorValue("On Ground?"))))
+				{
+					_customEvent_CheckFalling();
+					if(!(_CanFall))
+					{
+						actor.say("Animation Manager", "_customBlock_ClearAnimCat", [_AnimationCategory]);
+					}
+				}
+				else
+				{
+					actor.say("Animation Manager", "_customBlock_ClearAnimCat", [_AnimationCategory]);
+					return;
+				}
+				if(!(_CanFall))
+				{
+					actor.setActorValue("Is Falling?", false);
+				}
+				else
+				{
+					actor.setActorValue("Is Falling?", true);
+					if(asBoolean(actor.getActorValue("Facing Right?")))
+					{
+						actor.say("Animation Manager", "_customBlock_LoopAnim", [_FallRightAnimation, _AnimationCategory]);
+					}
+					else
+					{
+						actor.say("Animation Manager", "_customBlock_LoopAnim", [_FallLeftAnimation, _AnimationCategory]);
+					}
+				}
+				_OldY = actor.getY();
+				if(asBoolean(actor.getActorValue("On Ground?")))
+				{
+					_GroundY = actor.getY();
+				}
+			}
+		});
 		
 	}
 	

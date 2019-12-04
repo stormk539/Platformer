@@ -75,6 +75,31 @@ class Design_17_17_CannotExitScreen extends ActorScript
 	override public function init()
 	{
 		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				if((actor.getX() < 0))
+				{
+					actor.setX(0);
+				}
+				if((actor.getY() < 0))
+				{
+					actor.setY(0);
+				}
+				/* Use scene, not screen */
+				if(((actor.getX() + (actor.getWidth())) > getSceneWidth()))
+				{
+					actor.setX((getSceneWidth() - (actor.getWidth())));
+				}
+				if(((actor.getY() + (actor.getHeight())) > getSceneHeight()))
+				{
+					actor.setY((getSceneHeight() - (actor.getHeight())));
+				}
+			}
+		});
+		
 	}
 	
 	override public function forwardMessage(msg:String)

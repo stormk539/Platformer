@@ -94,6 +94,53 @@ class Design_10_10_Slowdown extends ActorScript
 	override public function init()
 	{
 		
+		/* ======================== When Creating ========================= */
+		/* Inputs: ---------------------- */
+		/* "On Ground?" -- <Boolean> Actor Level Attribute, from "On Ground" Behavior */
+		/* "Is Ducking?" -- <Boolean> Actor Level Attribute, from "Ducking" Behavior */
+		/* "Is Slope Sliding?" -- <Boolean> Actor Level Attribute, from "Slope Detection" Behavior */
+		/* Outputs: --------------------- */
+		/* None */
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				if(asBoolean(actor.getActorValue("Is Slope Sliding?")))
+				{
+					return;
+				}
+				if((asBoolean(actor.getActorValue("Is Ducking?")) && asBoolean(actor.getActorValue("On Ground?"))))
+				{
+					actor.setXVelocity((actor.getXVelocity() * _DuckingSlowdown));
+					return;
+				}
+				if(((!(isKeyDown(_RightKey)) && !(isKeyDown(_LeftKey))) && !(asBoolean(actor.getActorValue("Is Ducking?")))))
+				{
+					if(asBoolean(actor.getActorValue("On Ground?")))
+					{
+						actor.setXVelocity((actor.getXVelocity() * _GroundSlowdown));
+					}
+					else
+					{
+						actor.setXVelocity((actor.getXVelocity() * _AirSlowdown));
+					}
+				}
+				else
+				{
+					if(asBoolean(actor.getActorValue("On Ground?")))
+					{
+						actor.say("Walking", "_customBlock_SlowToMax", [_MovingGroundSlowdown]);
+					}
+					else
+					{
+						actor.setXVelocity((actor.getXVelocity() * _MovingAirSlowdown));
+					}
+				}
+			}
+		});
+		
 	}
 	
 	override public function forwardMessage(msg:String)

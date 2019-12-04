@@ -75,6 +75,15 @@ class Design_39_39_CameraFollow extends ActorScript
 	override public function init()
 	{
 		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				engine.cameraFollow(actor);
+			}
+		});
+		
 	}
 	
 	override public function forwardMessage(msg:String)

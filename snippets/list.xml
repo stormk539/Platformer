@@ -47,7 +47,11 @@
         <number default="0" defaultValue="0" desc="" dropdown="" fullname="Ground Y" hidden="true" id="5" name="_GroundY" order="5"/>
         <text default="Falling" defaultValue="Falling" desc="Set the category used for the animation - used for the hierarchy." dropdown="" fullname="Animation Category" hidden="false" id="6" name="_AnimationCategory" order="6"/>
         <blocks/>
-        <events/>
+        <events>
+            <event displayName="CheckFalling" enabled="true" id="1" name="event-custom" order="1" repeats="true"/>
+            <event displayName="Updating" enabled="true" id="2" name="step" order="2" repeats="true"/>
+            <event displayName="Created" enabled="true" id="3" name="init" order="3" repeats="true"/>
+        </events>
     </snippet>
     <snippet attachedevent="false" class="scripts.Design_6_6_Walking" classname="scripts.Design_6_6_Walking" desc="This Behavior will handle the player's walking movement while on the ground." description="This Behavior will handle the player's walking movement while on the ground." design="true" drawOrder="0" id="6" name="Walking" oid="-1" package="" shared="false" type="actor">
         <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
@@ -73,12 +77,25 @@
             <receiver blockID="66" id="7"/>
             <receiver blockID="69" id="8"/>
         </blocks>
-        <events/>
+        <events>
+            <event displayName="SlowToMax" enabled="true" id="1" name="event-custom-block" order="1" repeats="true"/>
+            <event displayName="LimitSpeed" enabled="true" id="2" name="event-custom-block" order="2" repeats="true"/>
+            <event displayName="PreventWalk" enabled="true" id="3" name="event-custom-block" order="3" repeats="true"/>
+            <event displayName="GetMaxWalkSpeed" enabled="true" id="4" name="event-custom-block" order="4" repeats="true"/>
+            <event displayName="MaxWalkSpeed" enabled="true" id="5" name="event-custom-block" order="5" repeats="true"/>
+            <event displayName="GetWalkAccel" enabled="true" id="6" name="event-custom-block" order="6" repeats="true"/>
+            <event displayName="WalkAccel" enabled="true" id="7" name="event-custom-block" order="7" repeats="true"/>
+            <event displayName="AtMaxWalkingSpeed" enabled="true" id="8" name="event-custom-block" order="8" repeats="true"/>
+            <event displayName="Updating" enabled="true" id="9" name="step" order="9" repeats="true"/>
+            <event displayName="Created" enabled="true" id="10" name="init" order="10" repeats="true"/>
+        </events>
     </snippet>
     <snippet attachedevent="false" class="scripts.Design_39_39_CameraFollow" classname="scripts.Design_39_39_CameraFollow" desc="" description="" design="true" drawOrder="0" id="39" name="Camera Follow" oid="-1" package="scripts" shared="false" type="actor">
         <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="2147483647"/>
         <blocks/>
-        <events/>
+        <events>
+            <event displayName="Updating" enabled="true" id="1" name="step" order="1" repeats="true"/>
+        </events>
     </snippet>
     <snippet attachedevent="false" class="scripts.Design_7_7_Jumping" classname="scripts.Design_7_7_Jumping" desc="This Behavior controls the player's jumping." description="This Behavior controls the player's jumping." design="true" drawOrder="0" id="7" name="Jumping" oid="-1" package="" shared="false" type="actor">
         <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
@@ -97,7 +114,10 @@
         <number default="35.0" defaultValue="35.0" desc="Amount of force applied when jumping.&lt;br&gt;&#10;Default = 35" dropdown="" fullname="Jump Force" hidden="false" id="20" name="_JumpForce" order="4"/>
         <text default="Jumping" defaultValue="Jumping" desc="Set the category used for the animation - used for the hierarchy." dropdown="" fullname="Animation Category" hidden="false" id="21" name="_AnimationCategory" order="14"/>
         <blocks/>
-        <events/>
+        <events>
+            <event displayName="Updating" enabled="true" id="1" name="step" order="1" repeats="true"/>
+            <event displayName="Created" enabled="true" id="2" name="init" order="2" repeats="true"/>
+        </events>
     </snippet>
     <snippet attachedevent="false" class="scripts.Design_8_8_Running" classname="scripts.Design_8_8_Running" desc="This Behavior controls the player's ability to run.  The Walking Behavior must also be attached for this Behavior to work properly." description="This Behavior controls the player's ability to run.  The Walking Behavior must also be attached for this Behavior to work properly." design="true" drawOrder="0" id="8" name="Running" oid="-1" package="" shared="false" type="actor">
         <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
@@ -123,7 +143,11 @@
         <animation default="" defaultValue="" desc="" dropdown="" fullname="Full Run Left Animation" hidden="false" id="20" name="_FullRunLeftAnimation" order="20"/>
         <text default="Running" defaultValue="Running" desc="Set the category used for the animation - used for the hierarchy." dropdown="" fullname="Animation Category" hidden="false" id="21" name="_AnimationCategory" order="21"/>
         <blocks/>
-        <events/>
+        <events>
+            <event displayName="SetAnimation" enabled="true" id="1" name="event-custom" order="1" repeats="true"/>
+            <event displayName="Updating" enabled="true" id="2" name="step" order="2" repeats="true"/>
+            <event displayName="Created" enabled="true" id="3" name="init" order="3" repeats="true"/>
+        </events>
     </snippet>
     <snippet attachedevent="false" class="scripts.Design_40_40_DieinPit" classname="scripts.Design_40_40_DieinPit" desc="" description="" design="true" drawOrder="0" id="40" name="Die in Pit" oid="-1" package="scripts" shared="false" type="actor">
         <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="2147483647"/>
@@ -144,7 +168,10 @@
         <number default="0.975" defaultValue="0.975" desc="Rate of slowdown while moving through the air.&lt;br&gt;&lt;br&gt;&#10;default = 0.975" dropdown="" fullname="Moving Air Slowdown" hidden="false" id="6" name="_MovingAirSlowdown" order="7"/>
         <number default="0.9" defaultValue="0.9" desc="Rate of slowdown while on the ground, a movement key is being pressed, and the Actor is over its max speed. This will slow the Actor back down to the max speed.&lt;br&gt;&lt;br&gt;&#10;default = 0.9" dropdown="" fullname="Moving Ground Slowdown" hidden="false" id="7" name="_MovingGroundSlowdown" order="4"/>
         <blocks/>
-        <events/>
+        <events>
+            <event displayName="Updating" enabled="true" id="1" name="step" order="1" repeats="true"/>
+            <event displayName="Created" enabled="true" id="2" name="init" order="2" repeats="true"/>
+        </events>
     </snippet>
     <snippet attachedevent="false" class="scripts.Design_11_11_OnGround" classname="scripts.Design_11_11_OnGround" desc="This Behavior determines if the player is on the ground and sets an Actor Level Attribute as appropriate.  Other Behaviors can then use this Attribute to drive their logic." description="This Behavior determines if the player is on the ground and sets an Actor Level Attribute as appropriate.  Other Behaviors can then use this Attribute to drive their logic." design="true" drawOrder="0" id="11" name="On Ground" oid="-1" package="" shared="false" type="actor">
         <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
@@ -152,7 +179,11 @@
         <boolean default="false" defaultValue="false" desc="Only detect that the player is on the ground if standing on a tile?" dropdown="" fullname="Limit To Tiles?" hidden="false" id="2" name="_LimitToTiles" order="2"/>
         <list default="list" defaultValue="list" desc="If not limited to tiles, enter in any Actor Group that you want to exclude from ground collisions." dropdown="" fullname="Excluded Groups" hidden="false" id="3" name="_ExcludedGroups" order="3"/>
         <blocks/>
-        <events/>
+        <events>
+            <event displayName="Actor - Any" enabled="true" id="1" name="collide" order="1" repeats="true"/>
+            <event displayName="Updating" enabled="true" id="2" name="step" order="2" repeats="true"/>
+            <event displayName="Created" enabled="true" id="3" name="init" order="3" repeats="true"/>
+        </events>
     </snippet>
     <snippet attachedevent="false" class="scripts.Design_43_43_OnScreenButton" classname="scripts.Design_43_43_OnScreenButton" desc="A button to simulate key presses/releases." description="A button to simulate key presses/releases." design="true" drawOrder="0" id="43" name="On Screen Button" oid="-1" package="scripts" shared="false" type="actor">
         <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
@@ -201,13 +232,11 @@
     <snippet attachedevent="false" class="scripts.Design_17_17_CannotExitScreen" classname="scripts.Design_17_17_CannotExitScreen" desc="Prevents the actor from going beyond the screen's bounds." description="Prevents the actor from going beyond the screen's bounds." design="true" drawOrder="0" id="17" name="Cannot Exit Screen" oid="-1" package="" shared="false" type="actor">
         <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="2147483647"/>
         <blocks/>
-        <events/>
+        <events>
+            <event displayName="Updating" enabled="true" id="1" name="step" order="1" repeats="true"/>
+        </events>
     </snippet>
     <snippet actorid="3" attachedevent="true" class="scripts.ActorEvents_3" classname="scripts.ActorEvents_3" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="49" name="ActorEvents_3" oid="-1" package="scripts." shared="false" type="actor">
-        <blocks/>
-        <events/>
-    </snippet>
-    <snippet actorid="165" attachedevent="true" class="scripts.ActorEvents_165" classname="scripts.ActorEvents_165" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="50" name="ActorEvents_165" oid="-1" package="scripts." shared="false" type="actor">
         <blocks/>
         <events/>
     </snippet>
@@ -218,5 +247,41 @@
     <snippet actorid="169" attachedevent="true" class="scripts.ActorEvents_169" classname="scripts.ActorEvents_169" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="52" name="ActorEvents_169" oid="-1" package="scripts." shared="false" type="actor">
         <blocks/>
         <events/>
+    </snippet>
+    <snippet attachedevent="false" class="scripts.Design_53_53_Punch" classname="scripts.Design_53_53_Punch" desc="" description="" design="true" drawOrder="0" id="53" name="Punch" oid="-1" package="scripts" shared="false" type="actor">
+        <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="2147483647"/>
+        <blocks/>
+        <events>
+            <event displayName="Keyboard" enabled="true" id="2" name="event-key-press-release" order="2" repeats="true"/>
+            <event displayName="Keyboard" enabled="true" id="3" name="event-key-press-release" order="3" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet attachedevent="false" class="scripts.Design_54_54_EnemyDeath" classname="scripts.Design_54_54_EnemyDeath" desc="" description="" design="true" drawOrder="0" id="54" name="Player_Death" oid="-1" package="scripts" shared="false" type="actor">
+        <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="2147483647"/>
+        <blocks/>
+        <events>
+            <event displayName="Actor - Type" enabled="true" id="3" name="event-collide-actortotype" order="3" repeats="true"/>
+            <event displayName="Actor - Type" enabled="true" id="4" name="event-collide-actortotype" order="4" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet attachedevent="false" class="scripts.Design_55_55_EnemyDeath" classname="scripts.Design_55_55_EnemyDeath" desc="" description="" design="true" drawOrder="0" id="55" name="Enemy_Death" oid="-1" package="scripts" shared="false" type="actor">
+        <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="2147483647"/>
+        <blocks/>
+        <events>
+            <event displayName="Actor - Group" enabled="true" id="1" name="event-collide-actortogroup" order="1" repeats="true"/>
+            <event displayName="Group - Group" enabled="true" id="2" name="event-collide-grouptogroup" order="2" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet actorid="172" attachedevent="true" class="scripts.ActorEvents_172" classname="scripts.ActorEvents_172" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="56" name="ActorEvents_172" oid="-1" package="scripts." shared="false" type="actor">
+        <blocks/>
+        <events>
+            <event displayName="On Actor" enabled="true" id="2" name="event-mouse-enter-exit-actor" order="2" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet actorid="174" attachedevent="true" class="scripts.ActorEvents_174" classname="scripts.ActorEvents_174" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="57" name="ActorEvents_174" oid="-1" package="scripts." shared="false" type="actor">
+        <blocks/>
+        <events>
+            <event displayName="On Actor" enabled="true" id="1" name="event-mouse-enter-exit-actor" order="1" repeats="true"/>
+        </events>
     </snippet>
 </pack>

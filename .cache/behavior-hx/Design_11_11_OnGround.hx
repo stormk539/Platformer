@@ -83,6 +83,65 @@ class Design_11_11_OnGround extends ActorScript
 	override public function init()
 	{
 		
+		/* ======================== When Creating ========================= */
+		/* Inputs: */
+		/* None */
+		/* Outputs: */
+		/* "On Ground?" -- <Boolean> Actor Level Attribute */
+		
+		/* ======================== Something Else ======================== */
+		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				/* Don't consider collisions with sensors as hitting the ground */
+				if(event.thisCollidedWithSensor)
+				{
+					return;
+				}
+				/* If we only want to detect collions with Tiles, and the Actor hit something other than the tile -- Quit */
+				if((_LimitToTiles && !(event.thisCollidedWithTile)))
+				{
+					return;
+				}
+				/* If we are excluding certain Actor Groups - check those here and quit if appropriate */
+				if((_ExcludedGroups.length > 0))
+				{
+					for(item in cast(_ExcludedGroups, Array<Dynamic>))
+					{
+						if((("" + item) == ("" + internalGetGroup(event.otherActor, event.otherShape, event))))
+						{
+							return;
+						}
+					}
+				}
+				/* If we get here and detect a bottom collision, we're on the ground */
+				for(point in event.points)
+				{
+					if((Math.abs(Math.round(Engine.toPixelUnits(point.normalY))) > 0.1))
+					{
+						_HitGround = true;
+						return;
+					}
+				}
+				if(event.thisFromBottom)
+				{
+					_HitGround = true;
+					return;
+				}
+			}
+		});
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				actor.setActorValue("On Ground?", _HitGround);
+				_HitGround = false;
+			}
+		});
+		
 	}
 	
 	override public function forwardMessage(msg:String)
