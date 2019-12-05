@@ -2,7 +2,16 @@
 <groups>
     <group eventID="1" id="0">
         <event-collide-actortogroup comment="false" x="15" y="15">
-            <group eventID="1" id="-1"/>
+            <group eventID="1" id="-1">
+                <if comment="false" x="26" y="47">
+                    <group eventID="1" id="-1">
+                        <die comment="false" x="37" y="72">
+                            <ACTOR eid="this" id="0"/>
+                        </die>
+                    </group>
+                    <get-game-val-5 comment="false" id="0" x="0" y="0"/>
+                </if>
+            </group>
             <ACTOR eid="this" id="0"/>
             <actorgroup eid="8" id="1"/>
         </event-collide-actortogroup>
@@ -37,23 +46,23 @@
             <get-val-55-1 comment="false" id="1" x="0" y="0"/>
         </event-collide-actortotype>
     </group>
-    <group eventID="3" id="3">
+    <group eventID="3" id="1">
         <if comment="false" x="612" y="290">
             <group eventID="3" id="-1"/>
             <int id="0" val=""/>
         </if>
     </group>
-    <group eventID="3" id="4">
+    <group eventID="3" id="2">
         <shape-group comment="false" x="936" y="511">
             <int id="0" val="Hit"/>
         </shape-group>
     </group>
-    <group eventID="3" id="5">
+    <group eventID="3" id="3">
         <collision-shape-group2 comment="false" x="782" y="393">
             <int id="0" val="0"/>
         </collision-shape-group2>
     </group>
-    <group eventID="3" id="6">
+    <group eventID="3" id="4">
         <get-val-55-1 comment="false" x="845" y="334"/>
     </group>
     <group eventID="3" id="-1"/>

@@ -349,8 +349,8 @@
             <poly data="4,150,0,290,0,290,225,150,225" density="0.1" fric="0.2" gid="-1000" id="1" name="Box" rest="0.0" sensor="false"/>
         </anim>
         <anim across="1" down="1" durations="100" height="225" id="2" loop="true" name="Punch" numframes="1" originx="200" originy="112" sync="false" version="2" width="400">
-            <poly data="4,148,0,288,0,288,225,148,225" density="0.1" fric="0.2" gid="8" id="0" name="Punch" rest="0.0" sensor="false"/>
-            <poly data="4,225,49,350,49,350,99,225,99" density="0.1" fric="0.2" gid="8" id="1" name="Box" rest="0.0" sensor="false"/>
+            <poly data="4,148,0,288,0,288,225,148,225" density="0.1" fric="0.2" gid="3" id="0" name="Punch" rest="0.0" sensor="false"/>
+            <poly data="4,199,66,399,66,399,116,199,116" density="0.1" fric="0.2" gid="3" id="1" name="Box" rest="0.0" sensor="false"/>
         </anim>
         <anim across="1" down="1" durations="100" height="225" id="3" loop="true" name="Hurt" numframes="1" originx="200" originy="112" sync="false" version="2" width="400">
             <poly data="4,150,0,290,0,290,225,150,225" density="0.1" fric="0.2" gid="-1000" id="0" name="Hurt_2" rest="0.0" sensor="false"/>

@@ -11,14 +11,12 @@
     <regions/>
     <terrainRegions/>
     <actors>
-        <actor a="0.0" aid="1" c="false" group="0" id="3" name="Player 1" order="0" sx="0.22321428" sy="0.22321428" x="-116" y="109" z="1"/>
-        <actor a="0.0" aid="2" c="false" group="9" id="169" name="Enemy_02 2" order="1" sx="0.27" sy="0.27" x="171" y="101" z="1"/>
-        <actor a="0.0" aid="3" c="false" group="9" id="167" name="Enemy_01 3" order="2" sx="0.23214285" sy="0.23214285" x="290" y="112" z="1"/>
-        <actor a="0.0" aid="4" c="false" group="9" id="169" name="Enemy_02 4" order="3" sx="0.27" sy="0.27" x="396" y="107" z="1"/>
-        <actor a="0.0" aid="5" c="false" group="9" id="167" name="Enemy_01 5" order="4" sx="0.4017857" sy="0.4017857" x="481" y="97" z="1"/>
-        <actor a="0.0" aid="6" c="false" group="9" id="167" name="Enemy_01 6" order="5" sx="0.2" sy="0.2" x="562" y="115" z="1"/>
-        <actor a="0.0" aid="7" c="false" group="9" id="169" name="Enemy_02 7" order="6" sx="0.33035713" sy="0.33035713" x="639" y="106" z="1"/>
-        <actor a="0.0" aid="8" c="false" group="9" id="169" name="Enemy_02 8" order="7" sx="1.115" sy="1.115" x="846" y="32" z="1"/>
+        <actor a="0.0" aid="1" c="false" group="0" id="3" name="Player 1" order="0" sx="0.57" sy="0.57" x="-111" y="82" z="1"/>
+        <actor a="0.0" aid="2" c="false" group="9" id="169" name="Enemy_02 2" order="1" sx="0.51785713" sy="0.51785713" x="153" y="84" z="1"/>
+        <actor a="0.0" aid="8" c="false" group="9" id="169" name="Enemy_02 8" order="2" sx="1.115" sy="1.115" x="919" y="32" z="1"/>
+        <actor a="0.0" aid="9" c="false" group="9" id="169" name="Enemy_02 9" order="3" sx="0.51785713" sy="0.51785713" x="489" y="79" z="1"/>
+        <actor a="0.0" aid="10" c="false" group="9" id="167" name="Enemy_01 10" order="4" sx="0.5" sy="0.5" x="303" y="84" z="1"/>
+        <actor a="0.0" aid="11" c="false" group="9" id="167" name="Enemy_01 11" order="5" sx="0.5625" sy="0.5625" x="683" y="80" z="1"/>
     </actors>
     <snippets/>
     <terrain>
