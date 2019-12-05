@@ -62,13 +62,16 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class SceneEvents_2 extends SceneScript
+class SceneEvents_1 extends SceneScript
 {
+	public var _MusicPlaying:Bool;
 	
 	
 	public function new(dummy:Int, dummy2:Engine)
 	{
 		super();
+		nameMap.set("MusicPlaying", "_MusicPlaying");
+		_MusicPlaying = true;
 		
 	}
 	
@@ -76,13 +79,77 @@ class SceneEvents_2 extends SceneScript
 	{
 		
 		/* ======================== When Creating ========================= */
-		loopSound(getSound(203));
+		Engine.engine.setGameAttribute("Player_Health", 3);
+		getActor(1).moveTo(98, 84, 1, Easing.expoInOut);
+		runLater(1000 * 1.05, function(timeTask:TimedTask):Void
+		{
+			getActor(1).moveTo(352, 64, 0.75, Easing.expoInOut);
+		}, null);
+		runLater(1000 * 2, function(timeTask:TimedTask):Void
+		{
+			getActor(2).moveTo(98, 84, 1, Easing.expoInOut);
+		}, null);
+		runLater(1000 * 3.05, function(timeTask:TimedTask):Void
+		{
+			getActor(2).moveTo(352, 225, 0.5, Easing.expoInOut);
+		}, null);
+		runLater(1000 * 0.5, function(timeTask:TimedTask):Void
+		{
+			getActor(4).setAnimation("Second");
+		}, null);
+		runLater(1000 * 2.5, function(timeTask:TimedTask):Void
+		{
+			getActor(4).setAnimation("Third");
+		}, null);
+		
+		/* ======================== When Creating ========================= */
+		if((_MusicPlaying == true))
+		{
+			setVolumeForChannel(50/100, 0);
+			loopSoundOnChannel(getSound(198), 0);
+			_MusicPlaying = false;
+		}
+		
+		/* ======================== When Creating ========================= */
+		getActor(5).moveTo(160, -46, 1, Easing.elasticIn);
+		
+		/* ======================== When Creating ========================= */
 		getActor(3).alpha = 0 / 100;
-		runLater(1000 * .75, function(timeTask:TimedTask):Void
+		runLater(1000 * 0.5, function(timeTask:TimedTask):Void
 		{
 			getActor(3).alpha = 100 / 100;
 		}, null);
-		getActor(3).growTo(100/100, 100/100, 1.5, Easing.elasticInOut);
+		runLater(1000 * 1, function(timeTask:TimedTask):Void
+		{
+			getActor(3).alpha = 0 / 100;
+		}, null);
+		runLater(1000 * 2.5, function(timeTask:TimedTask):Void
+		{
+			getActor(3).alpha = 100 / 100;
+		}, null);
+		runLater(1000 * 3, function(timeTask:TimedTask):Void
+		{
+			getActor(3).alpha = 0 / 100;
+		}, null);
+		
+		/* ========================= When Drawing ========================= */
+		addWhenDrawingListener(null, function(g:G, x:Float, y:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				g.setFont(getFont(204));
+				g.drawString("" + "Clench arm to begin", 260, 167);
+			}
+		});
+		
+		/* =========================== Keyboard =========================== */
+		addKeyStateListener("down", function(pressed:Bool, released:Bool, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled && pressed)
+			{
+				switchScene(GameModel.get().scenes.get(1).getID(), null, createCrossfadeTransition(0.25));
+			}
+		});
 		
 	}
 	

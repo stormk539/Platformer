@@ -4,7 +4,7 @@
     <exts>
         <e enabled="false" id="date"/>
         <e enabled="false" id="dialog"/>
-        <e enabled="true" id="customcontrols" version="1.4.0"/>
+        <e enabled="false" id="customcontrols"/>
         <e enabled="false" id="test"/>
         <e enabled="false" id="myplaygames"/>
         <e enabled="false" id="test-native"/>
@@ -16,10 +16,10 @@
         <e enabled="false" id="test-flash"/>
     </exts>
     <bundles>
-        <bundle author="" id="com.yourcompany.gamename" internalVersion="1" metroColor="-12566464" name="" store="Windows Store" version="1.0"/>
-        <bundle id="com.company.gamename" internalVersion="1" name="Platformer" store="Google Play" version="1.0"/>
-        <bundle id="com.company.gamename" internalVersion="1" name="Platformer" store="App Store" version="1.0"/>
         <bundle id="com.yourcompany.gamename" internalVersion="1" name="Platformer" store="Mac App Store" version="1.0"/>
+        <bundle id="com.company.gamename" internalVersion="1" name="Platformer" store="App Store" version="1.0"/>
+        <bundle id="com.company.gamename" internalVersion="1" name="Platformer" store="Google Play" version="1.0"/>
+        <bundle author="" id="com.yourcompany.gamename" internalVersion="1" metroColor="-12566464" name="" store="Windows Store" version="1.0"/>
     </bundles>
     <scales>
         <scale detailed="1x" id="0" name="1x" size="1.0"/>
@@ -112,7 +112,7 @@
         <boolean cid="-1" id="5" name="Punching" save="true" value="false"/>
         <boolean cid="-1" id="3" name="Bool" save="true" value="false"/>
         <boolean cid="-1" id="1" name="PausePlayer" save="true" value="false"/>
-        <number cid="-1" id="6" name="Player_Health" save="true" value="0"/>
+        <number cid="-1" id="6" name="Player_Health" save="true" value="0.0"/>
         <text cid="-1" id="2" name="AffichageTexte" save="true" value="0"/>
         <number cid="-1" id="0" name="SoundCat" save="true" value="0.0"/>
     </attributes>
