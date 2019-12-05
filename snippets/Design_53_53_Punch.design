@@ -10,9 +10,18 @@
                 <set-game-val-5 comment="false" x="26" y="69">
                     <true comment="false" id="0" x="0" y="0"/>
                 </set-game-val-5>
-                <dolater comment="false" x="26" y="94">
+                <set-volume-channel comment="false" x="26" y="94">
+                    <int id="0" val="200"/>
+                    <int id="1" val="1"/>
+                </set-volume-channel>
+                <play-sound-channel comment="false" x="26" y="114">
+                    <int id="0" val="0"/>
+                    <sound eid="199" id="1"/>
+                    <int id="2" val="1"/>
+                </play-sound-channel>
+                <dolater comment="false" x="26" y="141">
                     <group eventID="2" id="-1">
-                        <set-game-val-5 comment="false" x="37" y="121">
+                        <set-game-val-5 comment="false" x="37" y="168">
                             <false comment="false" id="0" x="0" y="0"/>
                         </set-game-val-5>
                     </group>
@@ -24,12 +33,7 @@
             <int id="1" val="1"/>
         </event-key-press-release>
     </group>
-    <group eventID="2" id="1">
-        <get-game-val-5 comment="false" x="771" y="231"/>
-    </group>
-    <group eventID="2" id="-1">
-        <true comment="false" x="363" y="128"/>
-    </group>
+    <group eventID="2" id="-1"/>
     <group eventID="3" id="0">
         <event-key-press-release comment="false" x="15" y="15">
             <group eventID="3" id="-1">

@@ -90,6 +90,8 @@ class Design_53_53_Punch extends ActorScript
 			{
 				actor.say("Animation Manager", "_customBlock_PlayOnce", ["Punch"]);
 				Engine.engine.setGameAttribute("Punching", true);
+				setVolumeForChannel(200/100, 1);
+				playSoundOnChannel(getSound(199), 1);
 				runLater(1000 * .25, function(timeTask:TimedTask):Void
 				{
 					Engine.engine.setGameAttribute("Punching", false);

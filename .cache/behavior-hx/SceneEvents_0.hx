@@ -43,6 +43,7 @@ import box2D.common.math.B2Vec2;
 import box2D.dynamics.B2Body;
 import box2D.dynamics.B2Fixture;
 import box2D.dynamics.joints.B2Joint;
+import box2D.collision.shapes.B2Shape;
 
 import com.stencyl.graphics.shaders.BasicShader;
 import com.stencyl.graphics.shaders.GrayscaleShader;
@@ -61,25 +62,76 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_172 extends ActorScript
+class SceneEvents_0 extends SceneScript
 {
+	public var _IsPunching:Bool;
+	public var _score:Float;
 	
 	
-	public function new(dummy:Int, actor:Actor, dummy2:Engine)
+	public function new(dummy:Int, dummy2:Engine)
 	{
-		super(actor);
+		super();
+		nameMap.set("IsPunching", "_IsPunching");
+		_IsPunching = false;
+		nameMap.set("score", "_score");
+		_score = 0;
 		
 	}
 	
 	override public function init()
 	{
 		
-		/* =========================== Keyboard =========================== */
-		addKeyStateListener("Punch", function(pressed:Bool, released:Bool, list:Array<Dynamic>):Void
+		/* ======================== When Creating ========================= */
+		_score = 0;
+		Engine.engine.setGameAttribute("Player_Health", 3);
+		playSound(getSound(200));
+		
+		/* ======================== Actor of Type ========================= */
+		addWhenTypeGroupKilledListener(getActorType(167), function(eventActor:Actor, list:Array<Dynamic>):Void
 		{
-			if(wrapper.enabled && pressed)
+			if(wrapper.enabled)
 			{
-				switchScene(GameModel.get().scenes.get(0).getID(), null, createCrossfadeTransition(0.25));
+				_score = (_score + 100);
+			}
+		});
+		
+		/* ========================= When Drawing ========================= */
+		addWhenDrawingListener(null, function(g:G, x:Float, y:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				g.setFont(getFont(184));
+				g.drawString("" + "Score:", 15, 290);
+				g.drawString("" + _score, 95, 290);
+			}
+		});
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				if((_score == 600))
+				{
+					switchScene(GameModel.get().scenes.get(2).getID(), null, createCrossfadeTransition(0.25));
+				}
+				if(((Engine.engine.getGameAttribute("Player_Health") : Float) == 2))
+				{
+					getActor(1).setAnimation("Hurt");
+				}
+				else if(((Engine.engine.getGameAttribute("Player_Health") : Float) == 1))
+				{
+					getActor(1).setAnimation("Hurt2");
+				}
+			}
+		});
+		
+		/* ======================== Actor of Type ========================= */
+		addWhenTypeGroupKilledListener(getActorType(169), function(eventActor:Actor, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				_score = (_score + 75);
 			}
 		});
 		

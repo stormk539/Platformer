@@ -24,6 +24,10 @@
                 <set-game-val-6 comment="false" x="26" y="60">
                     <int id="0" val="3"/>
                 </set-game-val-6>
+                <play-sound4 comment="false" x="26" y="80">
+                    <int id="0" val="0"/>
+                    <sound eid="200" id="1"/>
+                </play-sound4>
             </group>
         </init>
     </group>
@@ -83,7 +87,7 @@
                     <group eventID="5" id="-1">
                         <setanim comment="false" x="37" y="139">
                             <ACTOR eid="1" id="0"/>
-                            <int id="1" val="Hurt2"/>
+                            <int id="1" val="Hurt"/>
                         </setanim>
                     </group>
                     <eq comment="false" id="0" x="0" y="0">
@@ -95,7 +99,7 @@
                     <group eventID="5" id="-1">
                         <setanim comment="false" x="37" y="208">
                             <ACTOR eid="1" id="0"/>
-                            <int id="1" val="Hurt3"/>
+                            <int id="1" val="Hurt2"/>
                         </setanim>
                     </group>
                     <eq comment="false" id="0" x="0" y="0">

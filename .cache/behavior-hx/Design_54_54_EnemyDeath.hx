@@ -61,25 +61,45 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_172 extends ActorScript
+class Design_54_54_EnemyDeath extends ActorScript
 {
 	
 	
 	public function new(dummy:Int, actor:Actor, dummy2:Engine)
 	{
 		super(actor);
+		nameMap.set("Actor", "actor");
 		
 	}
 	
 	override public function init()
 	{
 		
-		/* =========================== Keyboard =========================== */
-		addKeyStateListener("Punch", function(pressed:Bool, released:Bool, list:Array<Dynamic>):Void
+		/* ======================== Actor of Type ========================= */
+		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
 		{
-			if(wrapper.enabled && pressed)
+			if(wrapper.enabled && sameAsAny(getActorType(167), event.otherActor.getType(),event.otherActor.getGroup()))
 			{
-				switchScene(GameModel.get().scenes.get(0).getID(), null, createCrossfadeTransition(0.25));
+				Engine.engine.setGameAttribute("Player_Health", ((Engine.engine.getGameAttribute("Player_Health") : Float) - 1));
+				if(((Engine.engine.getGameAttribute("Player_Health") : Float) == 0))
+				{
+					recycleActor(actor);
+					switchScene(GameModel.get().scenes.get(0).getID(), null, createCrossfadeTransition(0.25));
+				}
+			}
+		});
+		
+		/* ======================== Actor of Type ========================= */
+		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled && sameAsAny(getActorType(169), event.otherActor.getType(),event.otherActor.getGroup()))
+			{
+				Engine.engine.setGameAttribute("Player_Health", ((Engine.engine.getGameAttribute("Player_Health") : Float) - 1));
+				if(((Engine.engine.getGameAttribute("Player_Health") : Float) == 0))
+				{
+					recycleActor(actor);
+					switchScene(GameModel.get().scenes.get(0).getID(), null, createCrossfadeTransition(0.25));
+				}
 			}
 		});
 		
