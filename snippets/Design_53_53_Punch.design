@@ -6,6 +6,15 @@
                 <set-game-val-5 comment="false" x="27" y="46">
                     <true comment="false" id="0" x="0" y="0"/>
                 </set-game-val-5>
+                <set-volume-channel comment="false" x="27" y="71">
+                    <int id="0" val="200"/>
+                    <int id="1" val="1"/>
+                </set-volume-channel>
+                <play-sound-channel comment="false" x="27" y="91">
+                    <int id="0" val="0"/>
+                    <sound eid="199" id="1"/>
+                    <int id="2" val="1"/>
+                </play-sound-channel>
             </group>
             <control eid="4" id="0"/>
             <int id="1" val="1"/>
@@ -22,24 +31,13 @@
             <ACTOR eid="this" id="2"/>
         </dolater>
     </group>
-    <group eventID="2" id="2">
-        <set-volume-channel comment="false" x="13" y="111">
-            <int id="0" val="200"/>
-            <int id="1" val="1"/>
-        </set-volume-channel>
-        <play-sound-channel comment="false" x="13" y="131">
-            <int id="0" val="0"/>
-            <sound eid="199" id="1"/>
-            <int id="2" val="1"/>
-        </play-sound-channel>
-    </group>
     <group eventID="2" id="3">
         <set-val-53-1 comment="false" x="267" y="219">
             <true comment="false" id="0" x="0" y="0"/>
         </set-val-53-1>
     </group>
     <group eventID="2" id="-1">
-        <eq comment="false" x="267" y="90">
+        <eq comment="false" x="413" y="145">
             <get-val-53-1 comment="false" id="0" x="0" y="0"/>
             <int id="1" val=""/>
         </eq>
@@ -153,30 +151,30 @@
             </group>
         </step>
     </group>
-    <group eventID="5" id="3">
-        <setanim comment="false" x="564" y="216">
+    <group eventID="5" id="1">
+        <setanim comment="false" x="680" y="153">
             <ACTOR eid="this" id="0"/>
             <int id="1" val="Hurt2"/>
         </setanim>
     </group>
-    <group eventID="5" id="6">
+    <group eventID="5" id="2">
         <setanim comment="false" x="532" y="312">
             <ACTOR eid="this" id="0"/>
             <int id="1" val="Hurt"/>
         </setanim>
     </group>
-    <group eventID="5" id="7">
+    <group eventID="5" id="3">
         <setanim comment="false" x="154" y="409">
             <ACTOR eid="this" id="0"/>
             <int id="1" val="Left"/>
         </setanim>
     </group>
-    <group eventID="5" id="8">
+    <group eventID="5" id="4">
         <set-game-val-5 comment="false" x="279" y="334">
             <false comment="false" id="0" x="0" y="0"/>
         </set-game-val-5>
     </group>
-    <group eventID="5" id="9">
+    <group eventID="5" id="5">
         <set-game-val-5 comment="false" x="628" y="441">
             <false comment="false" id="0" x="0" y="0"/>
         </set-game-val-5>

@@ -4,11 +4,17 @@
         <init comment="false" x="15" y="15">
             <group eventID="1" id="-1">
                 <play-sound4 comment="false" x="26" y="40">
-                    <int id="0" val="1"/>
+                    <int id="0" val="0"/>
                     <sound eid="203" id="1"/>
                 </play-sound4>
+                <set-game-val-7 comment="false" x="26" y="67">
+                    <int id="0" val="0"/>
+                </set-game-val-7>
             </group>
         </init>
+    </group>
+    <group eventID="1" id="1">
+        <get-game-val-7 comment="false" x="640" y="375"/>
     </group>
     <group eventID="1" id="-1"/>
 </groups>

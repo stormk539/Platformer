@@ -5,21 +5,24 @@
             <group eventID="3" id="-1">
                 <if comment="false" x="26" y="47">
                     <group eventID="3" id="-1">
-                        <set-val-54-1 comment="false" x="37" y="87">
+                        <set-val-54-1 comment="false" x="37" y="82">
                             <true comment="false" id="0" x="0" y="0"/>
                         </set-val-54-1>
-                        <set-game-val-6 comment="false" x="37" y="112">
+                        <set-game-val-6 comment="false" x="37" y="107">
                             <minus comment="false" id="0" x="0" y="0">
                                 <get-game-val-6 comment="false" id="0" x="0" y="0"/>
                                 <int id="1" val="1"/>
                             </minus>
                         </set-game-val-6>
-                        <if comment="false" x="37" y="142">
+                        <if comment="false" x="37" y="137">
                             <group eventID="3" id="-1">
-                                <die comment="false" x="48" y="172">
+                                <set-game-val-7 comment="false" x="48" y="167">
+                                    <int id="0" val="0"/>
+                                </set-game-val-7>
+                                <die comment="false" x="48" y="187">
                                     <ACTOR eid="this" id="0"/>
                                 </die>
-                                <scene-change-through comment="false" x="48" y="199">
+                                <scene-change-through comment="false" x="48" y="214">
                                     <scene eid="0" id="0"/>
                                     <int id="1" val="0"/>
                                     <int id="2" val="0.25"/>
@@ -47,13 +50,18 @@
             <actortype eid="167" id="1"/>
         </event-collide-actortotype>
     </group>
+    <group eventID="3" id="2">
+        <set-game-val-6 comment="false" x="76" y="248">
+            <int id="0" val="0"/>
+        </set-game-val-6>
+    </group>
     <group eventID="3" id="-1">
-        <eq comment="false" x="22" y="292">
+        <eq comment="false" x="140" y="385">
             <get-game-val-5 comment="false" id="0" x="0" y="0"/>
             <false comment="false" id="1" x="0" y="0"/>
         </eq>
         <false comment="false" x="265" y="305"/>
-        <eq comment="false" x="140" y="385">
+        <eq comment="false" x="22" y="292">
             <get-game-val-5 comment="false" id="0" x="0" y="0"/>
             <false comment="false" id="1" x="0" y="0"/>
         </eq>
@@ -105,7 +113,7 @@
             <actortype eid="169" id="1"/>
         </event-collide-actortotype>
     </group>
-    <group eventID="4" id="7">
+    <group eventID="4" id="1">
         <set-game-val-6 comment="false" x="166" y="345">
             <minus comment="false" id="0" x="0" y="0">
                 <get-game-val-6 comment="false" id="0" x="0" y="0"/>
@@ -113,12 +121,16 @@
             </minus>
         </set-game-val-6>
     </group>
-    <group eventID="4" id="10">
+    <group eventID="4" id="2">
         <neg comment="false" x="637" y="288">
             <int id="0" val=""/>
         </neg>
     </group>
     <group eventID="4" id="-1">
+        <not comment="false" x="284" y="429">
+            <int id="0" val=""/>
+        </not>
+        <false comment="false" x="51" y="296"/>
         <and comment="false" x="149" y="180">
             <eq comment="false" id="0" x="0" y="0">
                 <get-game-val-5 comment="false" id="0" x="0" y="0"/>
@@ -129,10 +141,6 @@
                 <int id="1" val=""/>
             </eq>
         </and>
-        <false comment="false" x="51" y="296"/>
-        <not comment="false" x="284" y="429">
-            <int id="0" val=""/>
-        </not>
     </group>
     <group eventID="5" id="0">
         <event-type-create-kill comment="false" x="15" y="15">
@@ -146,7 +154,6 @@
         </event-type-create-kill>
     </group>
     <group eventID="5" id="-1">
-        <true comment="false" x="73" y="135"/>
         <and comment="false" x="149" y="180">
             <eq comment="false" id="0" x="0" y="0">
                 <get-game-val-5 comment="false" id="0" x="0" y="0"/>
@@ -157,6 +164,7 @@
                 <int id="1" val=""/>
             </eq>
         </and>
+        <true comment="false" x="73" y="135"/>
     </group>
     <group eventID="6" id="0">
         <event-type-create-kill comment="false" x="15" y="15">
@@ -170,7 +178,6 @@
         </event-type-create-kill>
     </group>
     <group eventID="6" id="-1">
-        <true comment="false" x="94" y="150"/>
         <and comment="false" x="112" y="181">
             <eq comment="false" id="0" x="0" y="0">
                 <get-game-val-5 comment="false" id="0" x="0" y="0"/>
@@ -181,5 +188,6 @@
                 <int id="1" val=""/>
             </eq>
         </and>
+        <true comment="false" x="94" y="150"/>
     </group>
 </groups>

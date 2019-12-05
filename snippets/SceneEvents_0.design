@@ -20,7 +20,7 @@
             <actortype eid="167" id="1"/>
         </event-type-create-kill>
     </group>
-    <group eventID="1" id="3">
+    <group eventID="1" id="1">
         <set-game-val-6 comment="false" x="0" y="164">
             <int id="0" val=""/>
         </set-game-val-6>
@@ -133,13 +133,13 @@
         </set-val-41-4>
     </group>
     <group eventID="5" id="-1">
-        <and comment="false" x="157" y="352">
-            <int id="0" val=""/>
-            <get-val-41-4 comment="false" id="1" x="0" y="0"/>
-        </and>
         <and comment="false" x="165" y="259">
             <int id="0" val=""/>
             <get-val-41-3 comment="false" id="1" x="0" y="0"/>
+        </and>
+        <and comment="false" x="157" y="352">
+            <int id="0" val=""/>
+            <get-val-41-4 comment="false" id="1" x="0" y="0"/>
         </and>
     </group>
 </groups>

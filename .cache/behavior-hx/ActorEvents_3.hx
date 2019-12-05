@@ -61,7 +61,7 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_190 extends ActorScript
+class ActorEvents_3 extends ActorScript
 {
 	
 	
@@ -73,15 +73,6 @@ class ActorEvents_190 extends ActorScript
 	
 	override public function init()
 	{
-		
-		/* =========================== Keyboard =========================== */
-		addKeyStateListener("Punch", function(pressed:Bool, released:Bool, list:Array<Dynamic>):Void
-		{
-			if(wrapper.enabled && released)
-			{
-				switchScene(GameModel.get().scenes.get(0).getID(), null, createCrossfadeTransition(0.25));
-			}
-		});
 		
 	}
 	
