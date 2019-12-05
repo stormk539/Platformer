@@ -200,7 +200,7 @@
     </snippet>
     <snippet attachedevent="true" class="scripts.SceneEvents_0" classname="scripts.SceneEvents_0" desc="Scene Specific Events" description="Scene Specific Events" design="true" drawOrder="0" id="41" name="SceneEvents_0" oid="-1" package="scripts." sceneid="0" shared="false" type="scene">
         <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="IsPunching" hidden="false" id="1" name="_IsPunching" order="0"/>
-        <number default="0" defaultValue="0" desc="" dropdown="" fullname="score" hidden="false" id="2" name="_score" order="1"/>
+        <number default="0.0" defaultValue="0.0" desc="" dropdown="" fullname="score" hidden="false" id="2" name="_score" order="1"/>
         <blocks/>
         <events>
             <event displayName="Actor Created" enabled="true" id="1" name="event-type-create-kill" order="1" repeats="true"/>
