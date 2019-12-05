@@ -14,6 +14,7 @@
         <actor a="0.0" aid="2" c="false" group="3" id="174" name="Exit_B 2" order="1" sx="1.0" sy="1.0" x="480" y="224" z="2"/>
         <actor a="0.0" aid="3" c="false" group="3" id="176" name="HitEffect 3" order="2" sx="0.6938776" sy="0.6938776" x="34" y="8" z="2"/>
         <actor a="0.0" aid="4" c="false" group="3" id="178" name="Man_01 4" order="0" sx="1.0" sy="1.0" x="-74" y="39" z="0"/>
+        <actor a="0.0" aid="5" c="false" group="3" id="188" name="Title 5" order="3" sx="1.0" sy="1.0" x="156" y="-112" z="2"/>
     </actors>
     <snippets/>
     <terrain/>

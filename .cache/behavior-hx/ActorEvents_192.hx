@@ -61,35 +61,25 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class Design_54_54_EnemyDeath extends ActorScript
+class ActorEvents_192 extends ActorScript
 {
 	
 	
 	public function new(dummy:Int, actor:Actor, dummy2:Engine)
 	{
 		super(actor);
-		nameMap.set("Actor", "actor");
 		
 	}
 	
 	override public function init()
 	{
 		
-		/* ======================== Actor of Type ========================= */
-		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
+		/* ============================ Click ============================= */
+		addMousePressedListener(function(list:Array<Dynamic>):Void
 		{
-			if(wrapper.enabled && sameAsAny(getActorType(167), event.otherActor.getType(),event.otherActor.getGroup()))
+			if(wrapper.enabled)
 			{
-				recycleActor(actor);
-			}
-		});
-		
-		/* ======================== Actor of Type ========================= */
-		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
-		{
-			if(wrapper.enabled && sameAsAny(getActorType(169), event.otherActor.getType(),event.otherActor.getGroup()))
-			{
-				recycleActor(actor);
+				switchScene(GameModel.get().scenes.get(1).getID(), null, createCrossfadeTransition(0.25));
 			}
 		});
 		

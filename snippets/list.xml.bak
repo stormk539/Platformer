@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <pack>
+    <snippet actorid="194" attachedevent="true" class="scripts.ActorEvents_194" classname="scripts.ActorEvents_194" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="64" name="ActorEvents_194" oid="-1" package="scripts." shared="false" type="actor">
+        <blocks/>
+        <events/>
+    </snippet>
     <snippet attachedevent="false" class="scripts.Design_2_2_AnimationManager" classname="scripts.Design_2_2_AnimationManager" desc="This Behavior is responsible for keeping track of the current animation and overriding that animation (if appropriate) when a new animation request is made." description="This Behavior is responsible for keeping track of the current animation and overriding that animation (if appropriate) when a new animation request is made." design="true" drawOrder="0" id="2" name="Animation Manager" oid="-1" package="" shared="false" type="actor">
         <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
         <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="Playing One Time?" hidden="true" id="1" name="_PlayingOneTime" order="1"/>
@@ -192,8 +196,15 @@
     </snippet>
     <snippet attachedevent="true" class="scripts.SceneEvents_0" classname="scripts.SceneEvents_0" desc="Scene Specific Events" description="Scene Specific Events" design="true" drawOrder="0" id="41" name="SceneEvents_0" oid="-1" package="scripts." sceneid="0" shared="false" type="scene">
         <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="IsPunching" hidden="false" id="1" name="_IsPunching" order="0"/>
+        <number default="0" defaultValue="0" desc="" dropdown="" fullname="score" hidden="false" id="2" name="_score" order="1"/>
         <blocks/>
-        <events/>
+        <events>
+            <event displayName="Actor Created" enabled="true" id="1" name="event-type-create-kill" order="1" repeats="true"/>
+            <event displayName="Created" enabled="true" id="2" name="init" order="6" repeats="true"/>
+            <event displayName="Drawing" enabled="true" id="3" name="draw" order="3" repeats="true"/>
+            <event displayName="Actor Created" enabled="true" id="4" name="event-type-create-kill" order="5" repeats="true"/>
+            <event displayName="Updating" enabled="true" id="5" name="step" order="4" repeats="true"/>
+        </events>
     </snippet>
     <snippet attachedevent="false" class="scripts.Design_43_43_OnScreenButton" classname="scripts.Design_43_43_OnScreenButton" desc="A button to simulate key presses/releases." description="A button to simulate key presses/releases." design="true" drawOrder="0" id="43" name="On Screen Button" oid="-1" package="scripts" shared="false" type="actor">
         <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
@@ -221,11 +232,14 @@
         </events>
     </snippet>
     <snippet attachedevent="true" class="scripts.SceneEvents_1" classname="scripts.SceneEvents_1" desc="Scene Specific Events" description="Scene Specific Events" design="true" drawOrder="0" id="46" name="SceneEvents_1" oid="-1" package="scripts." sceneid="1" shared="false" type="scene">
+        <boolean default="true" defaultValue="true" desc="" dropdown="" fullname="MusicPlaying" hidden="false" id="1" name="_MusicPlaying" order="0"/>
         <blocks/>
         <events>
             <event displayName="Glove_Animations" enabled="true" id="2" name="init" order="2" repeats="true"/>
-            <event displayName="Hit_Effect" enabled="true" id="3" name="init" order="4" repeats="true"/>
-            <event displayName="Keyboard" enabled="true" id="4" name="event-key-press-release" order="3" repeats="true"/>
+            <event displayName="Hit_Effect" enabled="true" id="3" name="init" order="7" repeats="true"/>
+            <event displayName="Test_Animations" enabled="true" id="4" name="event-key-press-release" order="6" repeats="true"/>
+            <event displayName="Title_Animation" enabled="true" id="5" name="init" order="5" repeats="true"/>
+            <event displayName="Audio" enabled="true" id="6" name="init" order="4" repeats="true"/>
         </events>
     </snippet>
     <snippet actorid="3" attachedevent="true" class="scripts.ActorEvents_3" classname="scripts.ActorEvents_3" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="49" name="ActorEvents_3" oid="-1" package="scripts." shared="false" type="actor">
@@ -254,7 +268,7 @@
         <blocks/>
         <events>
             <event displayName="Actor - Type" enabled="true" id="3" name="event-collide-actortotype" order="3" repeats="true"/>
-            <event displayName="Actor - Type" enabled="true" id="4" name="event-collide-actortotype" order="4" repeats="true"/>
+            <event displayName="Actor - Type" enabled="true" id="4" name="event-collide-actortotype" order="5" repeats="true"/>
         </events>
     </snippet>
     <snippet attachedevent="false" class="scripts.Design_55_55_EnemyDeath" classname="scripts.Design_55_55_EnemyDeath" desc="" description="" design="true" drawOrder="0" id="55" name="Enemy_Death" oid="-1" package="scripts" shared="false" type="actor">
@@ -292,5 +306,21 @@
     <snippet attachedevent="true" class="scripts.SceneEvents_2" classname="scripts.SceneEvents_2" desc="Scene Specific Events" description="Scene Specific Events" design="true" drawOrder="0" id="60" name="SceneEvents_2" oid="-1" package="scripts." sceneid="2" shared="false" type="scene">
         <blocks/>
         <events/>
+    </snippet>
+    <snippet actorid="188" attachedevent="true" class="scripts.ActorEvents_188" classname="scripts.ActorEvents_188" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="61" name="ActorEvents_188" oid="-1" package="scripts." shared="false" type="actor">
+        <blocks/>
+        <events/>
+    </snippet>
+    <snippet actorid="190" attachedevent="true" class="scripts.ActorEvents_190" classname="scripts.ActorEvents_190" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="62" name="ActorEvents_190" oid="-1" package="scripts." shared="false" type="actor">
+        <blocks/>
+        <events>
+            <event displayName="Keyboard" enabled="true" id="1" name="event-key-press-release" order="1" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet actorid="192" attachedevent="true" class="scripts.ActorEvents_192" classname="scripts.ActorEvents_192" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="63" name="ActorEvents_192" oid="-1" package="scripts." shared="false" type="actor">
+        <blocks/>
+        <events>
+            <event displayName="Click" enabled="true" id="4" name="event-mouse-press-release" order="4" repeats="true"/>
+        </events>
     </snippet>
 </pack>
