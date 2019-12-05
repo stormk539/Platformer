@@ -83,6 +83,15 @@ class ActorEvents_172 extends ActorScript
 			}
 		});
 		
+		/* ============================ Click ============================= */
+		addMousePressedListener(function(list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				switchScene(GameModel.get().scenes.get(0).getID(), null, createCrossfadeTransition(0.25));
+			}
+		});
+		
 	}
 	
 	override public function forwardMessage(msg:String)

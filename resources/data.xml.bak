@@ -91,9 +91,7 @@
         <snippets/>
     </actor>
     <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="175" name="Exit_B" readable="false" shared="false">
-        <anim across="1" down="1" durations="100" height="75" id="0" loop="true" name="Animation 0" numframes="1" originx="66" originy="37" sync="false" version="2" width="133">
-            <poly data="4,0,0,133,0,133,75,0,75" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
-        </anim>
+        <anim across="1" down="1" durations="100" height="75" id="0" loop="true" name="Animation 0" numframes="1" originx="66" originy="37" sync="false" version="2" width="133"/>
     </sprite>
     <custom-block blocktag="custom-145" blocktype="NORMAL" code="" desc="Format a number to be displayed as a timer. Returns a text." global="true" gui="Format number %0 with %1 as minute-second separation and %2 as second-decimal separation" id="145" message="FormatTimer" name="FormatTimer" oid="-1" return="text" shared="false" snippetID="-1">
         <blank name="Time" order="0" type="number"/>
@@ -141,6 +139,14 @@
     <custom-block blocktag="custom-73" blocktype="NORMAL" code="(.say(&quot;Walking&quot;, &quot;_customBlock_GetWalkAccel&quot;) : Float)" desc="" global="false" gui="Get Walk Accel for %0" id="73" message="GetWalkAccel" name="GetWalkAccel" oid="-1" return="number" shared="false" snippetID="6">
         <blank name="Self" order="0" type="actor"/>
     </custom-block>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="58" fixedrot="false" fric="0.2" gid="3" id="176" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="HitEffect" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="177" static="false">
+        <snippets/>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="177" name="HitEffect" readable="false" shared="false">
+        <anim across="1" down="1" durations="100" height="159" id="0" loop="true" name="Animation 0" numframes="1" originx="98" originy="79" sync="false" version="2" width="197">
+            <poly data="4,0,0,197,0,197,159,0,159" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
     <custom-block blocktag="custom-13" blocktype="ACTION" code="" desc="" global="false" gui="Set Limit Speed for %0 to %1" id="13" message="LimitSpeed" name="LimitSpeed" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
         <blank name="Limit" order="1" type="boolean"/>
@@ -177,6 +183,14 @@
         <blank name="Animation" order="1" type="animation"/>
         <blank name="Category" order="2" type="text"/>
     </custom-block>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="59" fixedrot="false" fric="0.2" gid="3" id="178" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Man_01" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="179" static="false">
+        <snippets/>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="179" name="Man_01" readable="false" shared="false">
+        <anim across="1" down="1" durations="100" height="283" id="0" loop="true" name="First" numframes="1" originx="200" originy="141" sync="false" version="2" width="400"/>
+        <anim across="1" down="1" durations="100" height="283" id="1" loop="true" name="Second" numframes="1" originx="200" originy="141" sync="false" version="2" width="400"/>
+        <anim across="1" down="1" durations="100" height="283" id="2" loop="true" name="Third" numframes="1" originx="200" originy="141" sync="false" version="2" width="400"/>
+    </sprite>
     <custom-block blocktag="custom-14" blocktype="ACTION" code="" desc="" global="false" gui="For %0 Set Max Walk Speed To %1" id="14" message="MaxWalkSpeed" name="MaxWalkSpeed" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
         <blank name="MaxSpeed" order="1" type="number"/>
@@ -237,8 +251,8 @@
                 <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="1" list="0" val="right"/>
                 <prop id="2" list="0" val="left"/>
-                <prop id="3" list="0" val="300"/>
-                <prop id="4" list="0" val="22"/>
+                <prop id="3" list="0" val="500"/>
+                <prop id="4" list="0" val="30"/>
                 <prop id="5" list="0" val="true"/>
                 <prop id="6" list="0" val=""/>
                 <prop id="7" list="0" val="Left"/>
@@ -247,6 +261,7 @@
                 <prop id="10" list="0" val="false"/>
                 <prop id="11" list="1" val=""/>
                 <prop id="12" list="0" val="Walking"/>
+                <prop id="13" list="0" val="false"/>
             </s>
             <s enabled="false" id="54">
                 <prop id="2147483647" list="0" val="thisactor"/>
@@ -267,7 +282,7 @@
                 <prop id="16" list="0" val="0"/>
                 <prop id="17" list="0" val="0"/>
                 <prop id="18" list="0" val="0.75"/>
-                <prop id="19" list="0" val="No Sound"/>
+                <prop id="19" list="0" val="-1"/>
                 <prop id="20" list="0" val="35"/>
                 <prop id="21" list="0" val="Jumping"/>
             </s>
@@ -406,10 +421,6 @@
         <blank name="Prevent" order="1" type="boolean"/>
     </custom-block>
     <custom-block blocktag="custom-151" blocktype="ACTION" code="" desc="Pauses the countdown" global="false" gui="Pause timer" id="151" message="Pse" name="Pse" oid="-1" return="void" shared="false" snippetID="-1"/>
-    <custom-block blocktag="custom-146" blocktype="ACTION" code="" desc="" global="false" gui="set font for label %0 to %1" id="146" message="setLabelFont" name="setLabelFont" oid="-1" return="void" shared="false" snippetID="-1">
-        <blank name="Self" order="0" type="actor"/>
-        <blank name="font" order="1" type="font"/>
-    </custom-block>
     <custom-block blocktag="custom-81" blocktype="ACTION" code="" desc="" global="false" gui="set font for label %0 to %1" id="81" message="setLabelFont" name="setLabelFont" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
         <blank name="font" order="1" type="font"/>
@@ -418,11 +429,15 @@
         <blank name="Self" order="0" type="actor"/>
         <blank name="font" order="1" type="font"/>
     </custom-block>
-    <custom-block blocktag="custom-147" blocktype="ACTION" code="" desc="" global="false" gui="set text for label %0 to %1" id="147" message="setLabelText" name="setLabelText" oid="-1" return="void" shared="false" snippetID="-1">
+    <custom-block blocktag="custom-146" blocktype="ACTION" code="" desc="" global="false" gui="set font for label %0 to %1" id="146" message="setLabelFont" name="setLabelFont" oid="-1" return="void" shared="false" snippetID="-1">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="font" order="1" type="font"/>
+    </custom-block>
+    <custom-block blocktag="custom-80" blocktype="ACTION" code="" desc="" global="false" gui="set text for label %0 to %1" id="80" message="setLabelText" name="setLabelText" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
         <blank name="text" order="1" type="text"/>
     </custom-block>
-    <custom-block blocktag="custom-80" blocktype="ACTION" code="" desc="" global="false" gui="set text for label %0 to %1" id="80" message="setLabelText" name="setLabelText" oid="-1" return="void" shared="false" snippetID="-1">
+    <custom-block blocktag="custom-147" blocktype="ACTION" code="" desc="" global="false" gui="set text for label %0 to %1" id="147" message="setLabelText" name="setLabelText" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
         <blank name="text" order="1" type="text"/>
     </custom-block>
@@ -446,15 +461,22 @@
         <snippets/>
     </actor>
     <sprite atlasID="0" default="0" defaultAnimation="0" desc="" id="173" name="Start_B" readable="false" shared="false">
-        <anim across="1" down="1" durations="100" height="75" id="0" loop="true" name="Animation 0" numframes="1" originx="66" originy="37" sync="false" version="2" width="133">
-            <poly data="4,0,0,133,0,133,75,0,75" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
-        </anim>
+        <anim across="1" down="1" durations="100" height="75" id="0" loop="true" name="Animation 0" numframes="1" originx="66" originy="37" sync="false" version="2" width="133"/>
     </sprite>
     <custom-block blocktag="custom-150" blocktype="ACTION" code="" desc="Starts a timer with a certain value" global="false" gui="Start timer with %0 seconds" id="150" message="Strt" name="Strt" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="Seconds" order="0" type="number"/>
     </custom-block>
+    <tileset across="1" atlasID="0" desc="" down="1" id="180" name="TIle_Norm" oid="-1" readable="false" shared="false" th="32" tw="32">
+        <tile collision="-1" data="" durations="100" frames="0" id="0" order="-1"/>
+    </tileset>
+    <tileset across="1" atlasID="0" desc="" down="1" id="182" name="Tile_Right" oid="-1" readable="false" shared="false" th="32" tw="32">
+        <tile collision="-1" data="" durations="100" frames="0" id="0" order="-1"/>
+    </tileset>
     <tileset across="1" atlasID="0" desc="" down="1" id="163" name="Tiles" oid="-1" readable="false" shared="false" th="32" tw="32">
         <tile collision="1" data="" durations="100" frames="0" id="0" order="-1"/>
+    </tileset>
+    <tileset across="1" atlasID="0" desc="" down="1" id="181" name="Tilr_Left" oid="-1" readable="false" shared="false" th="32" tw="32">
+        <tile collision="-1" data="" durations="100" frames="0" id="0" order="-1"/>
     </tileset>
     <custom-block blocktag="custom-18" blocktype="ACTION" code="" desc="" global="false" gui="For %0 Set Walk Accel to %1" id="18" message="WalkAccel" name="WalkAccel" oid="-1" return="void" shared="false" snippetID="-1">
         <blank name="Self" order="0" type="actor"/>
